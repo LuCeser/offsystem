@@ -16,6 +16,9 @@
         initAnimations();
         initTheme();
         initSearch();
+        initTagFilter();
+        initFilterToggle();
+        initTagCloud();
         initModals();
     });
 
@@ -200,64 +203,113 @@
 
     // 搜索功能
     function initSearch() {
-        const searchInput = $('.search-input');
-        const searchResults = $('.search-results');
+        const searchInputs = $$('.search-input');
+        const searchResults = $$('.search-results');
 
-        if (!searchInput) return;
+        searchInputs.forEach(searchInput => {
+            let searchTimeout;
 
-        let searchTimeout;
+            searchInput.addEventListener('input', function() {
+                const query = this.value.trim();
 
-        searchInput.addEventListener('input', function() {
-            const query = this.value.trim();
+                // 防抖处理
+                clearTimeout(searchTimeout);
 
-            // 防抖处理
-            clearTimeout(searchTimeout);
+                if (query.length < 2) {
+                    hideSearchResults();
+                    return;
+                }
 
-            if (query.length < 2) {
-                hideSearchResults();
-                return;
-            }
+                searchTimeout = setTimeout(() => {
+                    performSearch(query);
+                }, 300);
+            });
 
-            searchTimeout = setTimeout(() => {
-                performSearch(query);
-            }, 300);
-        });
-
-        // 点击外部关闭搜索结果
-        document.addEventListener('click', function(event) {
-            if (!searchInput.contains(event.target) &&
-                (!searchResults || !searchResults.contains(event.target))) {
-                hideSearchResults();
+            function performSearch(query) {
+                // 这里可以实现实际的搜索逻辑
+                console.log('搜索:', query);
+                // 可以添加文章搜索、标签搜索等功能
             }
         });
-
-        function performSearch(query) {
-            // 这里可以实现实际的搜索逻辑
-            // 暂时显示模拟结果
-            showSearchResults([
-                { title: '搜索结果 1', excerpt: '关于 ' + query + ' 的相关内容...' },
-                { title: '搜索结果 2', excerpt: '更多关于 ' + query + ' 的信息...' }
-            ]);
-        }
-
-        function showSearchResults(results) {
-            if (!searchResults) return;
-
-            searchResults.innerHTML = results.map(result => `
-                <div class="search-result-item">
-                    <h4 class="search-result-title">${result.title}</h4>
-                    <p class="search-result-excerpt">${result.excerpt}</p>
-                </div>
-            `).join('');
-
-            addClass(searchResults, 'show');
-        }
 
         function hideSearchResults() {
-            if (searchResults) {
-                removeClass(searchResults, 'show');
-            }
+            searchResults.forEach(result => {
+                removeClass(result, 'show');
+            });
         }
+    }
+
+    // 标签过滤功能
+    function initTagFilter() {
+        const filterTags = $$('.filter-tags .tag');
+        const articleItems = $$('.article-item');
+
+        if (filterTags.length === 0 || articleItems.length === 0) return;
+
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                // 移除所有active类
+                filterTags.forEach(t => removeClass(t, 'active'));
+                // 添加active类到当前标签
+                addClass(this, 'active');
+
+                const selectedTag = this.getAttribute('data-tag');
+                filterArticles(selectedTag);
+            });
+        });
+
+        function filterArticles(tag) {
+            articleItems.forEach(article => {
+                if (tag === 'all') {
+                    article.style.display = 'block';
+                } else {
+                    const articleTags = article.getAttribute('data-tags');
+                    if (articleTags && articleTags.includes(tag)) {
+                        article.style.display = 'block';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                }
+            });
+        }
+    }
+
+    // 栏目过滤器切换
+    function initFilterToggle() {
+        const filterToggles = $$('.filter-toggle');
+
+        filterToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const filterContainer = this.closest('.collection-filter');
+                const tagsContainer = filterContainer.querySelector('.filter-tags-container');
+
+                this.setAttribute('aria-expanded', !isExpanded);
+
+                if (isExpanded) {
+                    tagsContainer.style.maxHeight = '0';
+                    this.querySelector('.filter-text').textContent = '展开筛选';
+                } else {
+                    tagsContainer.style.maxHeight = tagsContainer.scrollHeight + 'px';
+                    this.querySelector('.filter-text').textContent = '收起筛选';
+                }
+            });
+        });
+    }
+
+    // 标签云交互
+    function initTagCloud() {
+        const tagClouds = $$('.tag-cloud');
+
+        tagClouds.forEach(tag => {
+            tag.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tagName = this.textContent.trim();
+                console.log('点击标签:', tagName);
+                // 这里可以实现标签点击后的逻辑，比如跳转到标签页面
+                showNotification(`正在查看标签: ${tagName}`, 'info');
+            });
+        });
     }
 
     // 模态框功能

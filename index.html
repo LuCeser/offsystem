@@ -25,7 +25,18 @@
                 </div>
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link active">首页</a></li>
-                    <li><a href="articles.html" class="nav-link">文章</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">栏目 <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="collection/thinking.html" class="dropdown-link">思考感悟</a></li>
+                            <li><a href="collection/technology.html" class="dropdown-link">技术分享</a></li>
+                            <li><a href="collection/reading.html" class="dropdown-link">读书笔记</a></li>
+                            <li><a href="collection/life.html" class="dropdown-link">生活记录</a></li>
+                            <li><a href="collection/works.html" class="dropdown-link">作品展示</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="articles.html" class="nav-link">全部文章</a></li>
+                    <li><a href="tags.html" class="nav-link">标签</a></li>
                     <li><a href="about.html" class="nav-link">关于</a></li>
                 </ul>
                 <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
@@ -42,6 +53,103 @@
                     <h1 class="hero-title">思考的痕迹</h1>
                     <p class="hero-subtitle">记录想法，分享见解，在文字中寻找答案</p>
                     <a href="articles.html" class="cta-button">开始阅读</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="collections-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">内容栏目</h2>
+                    <div class="section-divider"></div>
+                </header>
+
+                <div class="collections-grid">
+                    <div class="collection-card">
+                        <div class="collection-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 11H3v10h6V11z"></path>
+                                <path d="M15 3H9v18h6V3z"></path>
+                                <path d="M21 7h-6v14h6V7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="collection-title">思考感悟</h3>
+                        <p class="collection-description">关于生活、哲学和个人成长的深度思考</p>
+                        <div class="collection-stats">
+                            <span class="stat">12 篇文章</span>
+                            <span class="stat">8 个标签</span>
+                        </div>
+                        <a href="collection/thinking.html" class="collection-link">浏览文章 →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <div class="collection-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="collection-title">技术分享</h3>
+                        <p class="collection-description">编程经验、技术实践和开发心得</p>
+                        <div class="collection-stats">
+                            <span class="stat">18 篇文章</span>
+                            <span class="stat">15 个标签</span>
+                        </div>
+                        <a href="collection/technology.html" class="collection-link">浏览文章 →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <div class="collection-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="collection-title">读书笔记</h3>
+                        <p class="collection-description">书籍推荐、阅读笔记和知识总结</p>
+                        <div class="collection-stats">
+                            <span class="stat">25 篇文章</span>
+                            <span class="stat">20 个标签</span>
+                        </div>
+                        <a href="collection/reading.html" class="collection-link">浏览文章 →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <div class="collection-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="collection-title">生活记录</h3>
+                        <p class="collection-description">日常生活、旅行见闻和美好瞬间</p>
+                        <div class="collection-stats">
+                            <span class="stat">8 篇文章</span>
+                            <span class="stat">6 个标签</span>
+                        </div>
+                        <a href="collection/life.html" class="collection-link">浏览文章 →</a>
+                    </div>
+
+                    <div class="collection-card">
+                        <div class="collection-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                                <line x1="7" y1="2" x2="7" y2="22"></line>
+                                <line x1="17" y1="2" x2="17" y2="22"></line>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <line x1="2" y1="7" x2="7" y2="7"></line>
+                                <line x1="2" y1="17" x2="7" y2="17"></line>
+                                <line x1="17" y1="17" x2="22" y2="17"></line>
+                                <line x1="17" y1="7" x2="22" y2="7"></line>
+                            </svg>
+                        </div>
+                        <h3 class="collection-title">作品展示</h3>
+                        <p class="collection-description">项目作品、设计创作和成果展示</p>
+                        <div class="collection-stats">
+                            <span class="stat">6 篇文章</span>
+                            <span class="stat">4 个标签</span>
+                        </div>
+                        <a href="collection/works.html" class="collection-link">浏览文章 →</a>
+                    </div>
                 </div>
             </div>
         </section>

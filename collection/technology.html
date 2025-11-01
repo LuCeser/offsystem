@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="技术分享 - 个人博客栏目">
+    <meta name="author" content="Blog Author">
+    <title>技术分享 - 我的个人博客</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="../index.html" class="brand-link">我的博客</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">首页</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link active">栏目 <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="thinking.html" class="dropdown-link">思考感悟</a></li>
+                            <li><a href="technology.html" class="dropdown-link active">技术分享</a></li>
+                            <li><a href="reading.html" class="dropdown-link">读书笔记</a></li>
+                            <li><a href="life.html" class="dropdown-link">生活记录</a></li>
+                            <li><a href="works.html" class="dropdown-link">作品展示</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../articles.html" class="nav-link">全部文章</a></li>
+                    <li><a href="../tags.html" class="nav-link">标签</a></li>
+                    <li><a href="../about.html" class="nav-link">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <!-- 面包屑导航 -->
+        <div class="container">
+            <nav class="breadcrumb" role="navigation" aria-label="面包屑导航">
+                <div class="breadcrumb-item">
+                    <a href="../index.html" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">技术分享</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 栏目头部 -->
+        <section class="collection-header">
+            <div class="container">
+                <div class="collection-hero">
+                    <div class="collection-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h1 class="collection-title">技术分享</h1>
+                    <p class="collection-description">编程经验、技术实践和开发心得</p>
+                    <div class="collection-meta">
+                        <span class="collection-stat">18 篇文章</span>
+                        <span class="collection-stat">15 个标签</span>
+                        <span class="collection-stat">更新于 2024年1月10日</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标签过滤 -->
+        <section class="collection-filter">
+            <div class="container">
+                <div class="filter-header">
+                    <h3>标签筛选</h3>
+                    <button class="filter-toggle" aria-expanded="false">
+                        <span class="filter-text">展开筛选</span>
+                        <span class="filter-arrow">▼</span>
+                    </button>
+                </div>
+                <div class="filter-tags-container">
+                    <div class="filter-tags">
+                        <button class="tag active" data-tag="all">全部</button>
+                        <button class="tag" data-tag="前端">前端</button>
+                        <button class="tag" data-tag="后端">后端</button>
+                        <button class="tag" data-tag="设计">设计</button>
+                        <button class="tag" data-tag="架构">架构</button>
+                        <button class="tag" data-tag="性能">性能</button>
+                        <button class="tag" data-tag="工具">工具</button>
+                        <button class="tag" data-tag="最佳实践">最佳实践</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文章列表 -->
+        <section class="collection-articles">
+            <div class="container">
+                <div class="articles-grid">
+                    <article class="article-item" data-tags="前端 设计">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2024-01-10" class="article-date">2024年1月10日</time>
+                                <span class="reading-time">阅读时间 6 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="../article.html?id=2">简约设计的力量</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                在信息过载的时代，简约设计不仅是一种美学选择，更是一种哲学态度。减法往往比加法更有力量...
+                            </p>
+                            <div class="article-tags">
+                                <span class="tag">设计哲学</span>
+                                <span class="tag">用户体验</span>
+                                <span class="tag">极简主义</span>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="../article.html?id=2" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item" data-tags="前端 架构">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-12-15" class="article-date">2023年12月15日</time>
+                                <span class="reading-time">阅读时间 8 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="../article.html?id=6">代码即诗歌</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                优秀的代码就像诗歌一样，简洁、优雅、富有表现力。在追求功能的同时，我们也不应该忘记代码的美学价值...
+                            </p>
+                            <div class="article-tags">
+                                <span class="tag">代码质量</span>
+                                <span class="tag">编程艺术</span>
+                                <span class="tag">最佳实践</span>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="../article.html?id=6" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item" data-tags="性能 前端">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-11-20" class="article-date">2023年11月20日</time>
+                                <span class="reading-time">阅读时间 10 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="../article.html?id=9">Web性能优化实践</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                性能优化不是一门玄学，而是基于数据和最佳实践的系统工程。本文分享我在Web性能优化方面的一些实践经验...
+                            </p>
+                            <div class="article-tags">
+                                <span class="tag">性能优化</span>
+                                <span class="tag">Web开发</span>
+                                <span class="tag">用户体验</span>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="../article.html?id=9" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item" data-tags="工具 最佳实践">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-10-30" class="article-date">2023年10月30日</time>
+                                <span class="reading-time">阅读时间 7 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="../article.html?id=10">现代开发工具链</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                合适的工具能够大大提升开发效率。在这篇文章中，我将分享一些我常用的开发工具和它们的使用技巧...
+                            </p>
+                            <div class="article-tags">
+                                <span class="tag">开发工具</span>
+                                <span class="tag">效率提升</span>
+                                <span class="tag">工作流</span>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="../article.html?id=10" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 分页导航 -->
+                <nav class="pagination" role="navigation" aria-label="文章分页">
+                    <ul class="pagination-list">
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="上一页">
+                                <span aria-hidden="true">←</span>
+                                上一页
+                            </a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link active" aria-label="第1页" aria-current="page">1</a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="第2页">2</a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="下一页">
+                                下一页
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 我的个人博客. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

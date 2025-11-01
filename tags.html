@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="标签云 - 个人博客">
+    <meta name="author" content="Blog Author">
+    <title>标签 - 我的个人博客</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">我的博客</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">首页</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">栏目 <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="collection/thinking.html" class="dropdown-link">思考感悟</a></li>
+                            <li><a href="collection/technology.html" class="dropdown-link">技术分享</a></li>
+                            <li><a href="collection/reading.html" class="dropdown-link">读书笔记</a></li>
+                            <li><a href="collection/life.html" class="dropdown-link">生活记录</a></li>
+                            <li><a href="collection/works.html" class="dropdown-link">作品展示</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="articles.html" class="nav-link">全部文章</a></li>
+                    <li><a href="tags.html" class="nav-link active">标签</a></li>
+                    <li><a href="about.html" class="nav-link">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <!-- 面包屑导航 -->
+        <div class="container">
+            <nav class="breadcrumb" role="navigation" aria-label="面包屑导航">
+                <div class="breadcrumb-item">
+                    <a href="index.html" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">标签</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 页面头部 -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">标签云</h1>
+                    <p class="page-subtitle">通过标签快速找到感兴趣的内容</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标签搜索 -->
+        <section class="tags-search">
+            <div class="container">
+                <div class="search-box">
+                    <input type="search" class="search-input" placeholder="搜索标签..." aria-label="搜索标签">
+                    <button type="submit" class="search-button" aria-label="搜索">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标签云 -->
+        <section class="tags-cloud-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">所有标签</h2>
+                    <div class="section-divider"></div>
+                </header>
+
+                <div class="tags-cloud">
+                    <!-- 大型标签 -->
+                    <a href="#" class="tag-cloud tag-large" data-count="25">创造力</a>
+                    <a href="#" class="tag-cloud tag-large" data-count="20">设计哲学</a>
+                    <a href="#" class="tag-cloud tag-large" data-count="18">个人成长</a>
+
+                    <!-- 中型标签 -->
+                    <a href="#" class="tag-cloud tag-medium" data-count="15">性能优化</a>
+                    <a href="#" class="tag-cloud tag-medium" data-count="14">用户体验</a>
+                    <a href="#" class="tag-cloud tag-medium" data-count="12">读书笔记</a>
+                    <a href="#" class="tag-cloud tag-medium" data-count="11">思考</a>
+                    <a href="#" class="tag-cloud tag-medium" data-count="10">Web开发</a>
+                    <a href="#" class="tag-cloud tag-medium" data-count="9">最佳实践</a>
+                    <a href="#" class="tag-cloud tag-medium" data-count="8">生活哲学</a>
+
+                    <!-- 小型标签 -->
+                    <a href="#" class="tag-cloud tag-small" data-count="7">极简主义</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="6">自我发现</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="6">代码质量</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="5">内省</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="5">开发工具</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="4">幸福感</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="4">工作流</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="3">编程艺术</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="3">效率提升</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="2">心理学</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="2">学习方法</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="1">旅行</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="1">摄影</a>
+                    <a href="#" class="tag-cloud tag-small" data-count="1">咖啡</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标签分类 -->
+        <section class="tags-categories">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">按栏目分类</h2>
+                    <div class="section-divider"></div>
+                </header>
+
+                <div class="tags-categories-grid">
+                    <div class="tag-category">
+                        <div class="category-header">
+                            <h3 class="category-title">思考感悟</h3>
+                            <a href="collection/thinking.html" class="category-link">查看全部 →</a>
+                        </div>
+                        <div class="category-tags">
+                            <a href="#" class="tag">创造力</a>
+                            <a href="#" class="tag">思考</a>
+                            <a href="#" class="tag">个人成长</a>
+                            <a href="#" class="tag">生活哲学</a>
+                            <a href="#" class="tag">自我发现</a>
+                            <a href="#" class="tag">极简主义</a>
+                            <a href="#" class="tag">内省</a>
+                            <a href="#" class="tag">幸福感</a>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <div class="category-header">
+                            <h3 class="category-title">技术分享</h3>
+                            <a href="collection/technology.html" class="category-link">查看全部 →</a>
+                        </div>
+                        <div class="category-tags">
+                            <a href="#" class="tag">设计哲学</a>
+                            <a href="#" class="tag">用户体验</a>
+                            <a href="#" class="tag">性能优化</a>
+                            <a href="#" class="tag">Web开发</a>
+                            <a href="#" class="tag">最佳实践</a>
+                            <a href="#" class="tag">代码质量</a>
+                            <a href="#" class="tag">开发工具</a>
+                            <a href="#" class="tag">效率提升</a>
+                            <a href="#" class="tag">编程艺术</a>
+                            <a href="#" class="tag">工作流</a>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <div class="category-header">
+                            <h3 class="category-title">读书笔记</h3>
+                            <a href="collection/reading.html" class="category-link">查看全部 →</a>
+                        </div>
+                        <div class="category-tags">
+                            <a href="#" class="tag">读书笔记</a>
+                            <a href="#" class="tag">书籍推荐</a>
+                            <a href="#" class="tag">知识管理</a>
+                            <a href="#" class="tag">学习方法</a>
+                            <a href="#" class="tag">心理学</a>
+                            <a href="#" class="tag">哲学</a>
+                            <a href="#" class="tag">经济学</a>
+                            <a href="#" class="tag">历史</a>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <div class="category-header">
+                            <h3 class="category-title">生活记录</h3>
+                            <a href="collection/life.html" class="category-link">查看全部 →</a>
+                        </div>
+                        <div class="category-tags">
+                            <a href="#" class="tag">旅行</a>
+                            <a href="#" class="tag">摄影</a>
+                            <a href="#" class="tag">咖啡</a>
+                            <a href="#" class="tag">美食</a>
+                            <a href="#" class="tag">生活感悟</a>
+                            <a href="#" class="tag">日常</a>
+                        </div>
+                    </div>
+
+                    <div class="tag-category">
+                        <div class="category-header">
+                            <h3 class="category-title">作品展示</h3>
+                            <a href="collection/works.html" class="category-link">查看全部 →</a>
+                        </div>
+                        <div class="category-tags">
+                            <a href="#" class="tag">设计作品</a>
+                            <a href="#" class="tag">项目案例</a>
+                            <a href="#" class="tag">创意实现</a>
+                            <a href="#" class="tag">开源项目</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门标签 -->
+        <section class="popular-tags">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">热门标签</h2>
+                    <div class="section-divider"></div>
+                </header>
+
+                <div class="popular-tags-list">
+                    <div class="popular-tag-item">
+                        <h4 class="popular-tag-name">
+                            <a href="#">创造力</a>
+                        </h4>
+                        <p class="popular-tag-count">25 篇文章</p>
+                        <p class="popular-tag-desc">关于创造性思维、创新能力培养和实践经验的文章</p>
+                    </div>
+
+                    <div class="popular-tag-item">
+                        <h4 class="popular-tag-name">
+                            <a href="#">设计哲学</a>
+                        </h4>
+                        <p class="popular-tag-count">20 篇文章</p>
+                        <p class="popular-tag-desc">探讨设计理念、用户体验和界面美学的深度思考</p>
+                    </div>
+
+                    <div class="popular-tag-item">
+                        <h4 class="popular-tag-name">
+                            <a href="#">个人成长</a>
+                        </h4>
+                        <p class="popular-tag-count">18 篇文章</p>
+                        <p class="popular-tag-desc">分享个人成长经历、学习方法和生活智慧</p>
+                    </div>
+
+                    <div class="popular-tag-item">
+                        <h4 class="popular-tag-name">
+                            <a href="#">性能优化</a>
+                        </h4>
+                        <p class="popular-tag-count">15 篇文章</p>
+                        <p class="popular-tag-desc">Web性能优化技巧、工具使用和最佳实践</p>
+                    </div>
+
+                    <div class="popular-tag-item">
+                        <h4 class="popular-tag-name">
+                            <a href="#">读书笔记</a>
+                        </h4>
+                        <p class="popular-tag-count">12 篇文章</p>
+                        <p class="popular-tag-desc">精选书籍的读书笔记和知识总结</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 我的个人博客. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
