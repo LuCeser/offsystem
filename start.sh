@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# 像素博客启动脚本
+# 编外博客启动脚本
 
-echo "🚀 启动像素博客服务器..."
+echo "🚀 启动编外博客服务器..."
 echo "📍 项目目录: $(pwd)"
 echo "🌐 服务器地址: http://localhost:8000"
 echo ""

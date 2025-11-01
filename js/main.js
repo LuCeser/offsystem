@@ -381,7 +381,7 @@
         }
 
         // 更新页面标题
-        document.title = `${tagName} - 像素`;
+        document.title = `${tagName} - 编外`;
     }
 
     // 模态框功能
