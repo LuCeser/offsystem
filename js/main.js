@@ -381,7 +381,7 @@
         }
 
         // 更新页面标题
-        document.title = `${tagName} - 我的个人博客`;
+        document.title = `${tagName} - 像素`;
     }
 
     // 模态框功能
