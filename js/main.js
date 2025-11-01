@@ -19,6 +19,8 @@
         initTagFilter();
         initFilterToggle();
         initTagCloud();
+        initViewToggle();
+        initUrlParams();
         initModals();
     });
 
@@ -306,10 +308,80 @@
                 e.preventDefault();
                 const tagName = this.textContent.trim();
                 console.log('点击标签:', tagName);
-                // 这里可以实现标签点击后的逻辑，比如跳转到标签页面
-                showNotification(`正在查看标签: ${tagName}`, 'info');
+                // 现在标签云会跳转到对应的标签页面
+                window.location.href = `tag.html?tag=${encodeURIComponent(tagName)}`;
             });
         });
+    }
+
+    // 视图切换功能
+    function initViewToggle() {
+        const viewOptions = $$('.view-option');
+        const articlesGrid = $('#articlesGrid');
+        const articlesList = $('#articlesList');
+
+        if (viewOptions.length === 0) return;
+
+        viewOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const view = this.getAttribute('data-view');
+
+                // 更新按钮状态
+                viewOptions.forEach(opt => removeClass(opt, 'active'));
+                addClass(this, 'active');
+
+                // 切换视图
+                if (view === 'grid') {
+                    articlesGrid.style.display = 'grid';
+                    articlesList.style.display = 'none';
+                } else if (view === 'list') {
+                    articlesGrid.style.display = 'none';
+                    articlesList.style.display = 'flex';
+                }
+            });
+        });
+    }
+
+    // URL参数处理
+    function initUrlParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tagName = urlParams.get('tag');
+
+        if (tagName) {
+            // 更新页面标题和内容
+            const tagTitle = document.querySelector('.tag-title');
+            const tagDescription = document.querySelector('.tag-description');
+
+            if (tagTitle) {
+                tagTitle.textContent = tagName;
+            }
+
+            // 根据标签名更新描述
+            updateTagContent(tagName);
+        }
+    }
+
+    function updateTagContent(tagName) {
+        const tagDescriptions = {
+            '创造力': '关于创造性思维、创新能力培养和实践经验的文章',
+            '设计哲学': '探讨设计理念、用户体验和界面美学的深度思考',
+            '个人成长': '分享个人成长经历、学习方法和生活智慧',
+            '性能优化': 'Web性能优化技巧、工具使用和最佳实践',
+            '用户体验': '用户界面设计、交互设计和用户体验优化',
+            '读书笔记': '精选书籍的读书笔记和知识总结',
+            '思考': '深度思考和哲学探讨的文章',
+            '极简主义': '极简生活和工作理念的分享',
+            'Web开发': 'Web前端和后端开发的技术分享',
+            '最佳实践': '编程和开发的最佳实践经验'
+        };
+
+        const tagDescription = document.querySelector('.tag-description');
+        if (tagDescription && tagDescriptions[tagName]) {
+            tagDescription.textContent = tagDescriptions[tagName];
+        }
+
+        // 更新页面标题
+        document.title = `${tagName} - 我的个人博客`;
     }
 
     // 模态框功能

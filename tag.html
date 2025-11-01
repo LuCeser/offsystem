@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="标签文章列表 - 个人博客">
+    <meta name="author" content="Blog Author">
+    <title>创造力 - 我的个人博客</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">我的博客</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">首页</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">栏目 <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="collection/thinking.html" class="dropdown-link">思考感悟</a></li>
+                            <li><a href="collection/technology.html" class="dropdown-link">技术分享</a></li>
+                            <li><a href="collection/reading.html" class="dropdown-link">读书笔记</a></li>
+                            <li><a href="collection/life.html" class="dropdown-link">生活记录</a></li>
+                            <li><a href="collection/works.html" class="dropdown-link">作品展示</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="articles.html" class="nav-link">全部文章</a></li>
+                    <li><a href="tags.html" class="nav-link">标签</a></li>
+                    <li><a href="about.html" class="nav-link">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <!-- 面包屑导航 -->
+        <div class="container">
+            <nav class="breadcrumb" role="navigation" aria-label="面包屑导航">
+                <div class="breadcrumb-item">
+                    <a href="index.html" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <a href="tags.html" class="breadcrumb-link">标签</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">创造力</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 标签页面头部 -->
+        <section class="tag-header">
+            <div class="container">
+                <div class="tag-hero">
+                    <div class="tag-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                    </div>
+                    <h1 class="tag-title">创造力</h1>
+                    <p class="tag-description">关于创造性思维、创新能力培养和实践经验的文章</p>
+                    <div class="tag-meta">
+                        <span class="tag-count">25 篇文章</span>
+                        <span class="tag-updated">更新于 2024年1月15日</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 标签统计 -->
+        <section class="tag-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">25</div>
+                        <div class="stat-label">相关文章</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">相关栏目</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1.2k</div>
+                        <div class="stat-label">总阅读量</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">平均评分</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关标签 -->
+        <section class="related-tags">
+            <div class="container">
+                <header class="section-header">
+                    <h3 class="section-title">相关标签</h3>
+                </header>
+                <div class="related-tags-list">
+                    <a href="tag.html?tag=思考" class="tag related-tag">思考</a>
+                    <a href="tag.html?tag=学习方法" class="tag related-tag">学习方法</a>
+                    <a href="tag.html?tag=个人成长" class="tag related-tag">个人成长</a>
+                    <a href="tag.html?tag=设计哲学" class="tag related-tag">设计哲学</a>
+                    <a href="tag.html?tag=创新思维" class="tag related-tag">创新思维</a>
+                    <a href="tag.html?tag=头脑风暴" class="tag related-tag">头脑风暴</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文章列表 -->
+        <section class="tag-articles">
+            <div class="container">
+                <header class="section-header">
+                    <h3 class="section-title">相关文章</h3>
+                    <div class="view-options">
+                        <button class="view-option active" data-view="grid">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                        </button>
+                        <button class="view-option" data-view="list">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- 网格视图 -->
+                <div class="articles-grid view-grid" id="articlesGrid">
+                    <article class="article-item" data-tags="创造力 思考">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2024-01-15" class="article-date">2024年1月15日</time>
+                                <span class="article-category">思考感悟</span>
+                                <span class="reading-time">阅读时间 8 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=1">关于创造力的思考</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                创造力不是魔法，而是一种可以通过练习培养的能力。在这篇文章中，我想分享一些关于如何培养和维持创造力的想法。创造力不是与生俱来的天赋，而是可以通过正确的方法和环境培养的能力...
+                            </p>
+                            <div class="article-tags">
+                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
+                                <a href="tag.html?tag=思考" class="tag">思考</a>
+                                <a href="tag.html?tag=学习方法" class="tag">学习方法</a>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=1" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item" data-tags="创造力 设计哲学">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2024-01-10" class="article-date">2024年1月10日</time>
+                                <span class="article-category">技术分享</span>
+                                <span class="reading-time">阅读时间 6 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=2">简约设计的创造力</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                在信息过载的时代，简约设计不仅是一种美学选择，更是一种创造性的表达。通过减法而非加法，我们能够创造出更有力量和影响力的设计作品...
+                            </p>
+                            <div class="article-tags">
+                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
+                                <a href="tag.html?tag=设计哲学" class="tag">设计哲学</a>
+                                <a href="tag.html?tag=极简主义" class="tag">极简主义</a>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=2" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item" data-tags="创造力 个人成长">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-12-20" class="article-date">2023年12月20日</time>
+                                <span class="article-category">读书笔记</span>
+                                <span class="reading-time">阅读时间 10 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=5">《创造力的跃迁》读书笔记</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                这本书深入探讨了创造力的本质和培养方法。作者通过大量的案例和科学研究，揭示了创造力的运作机制，以及如何在日常生活和工作中激发创造力...
+                            </p>
+                            <div class="article-tags">
+                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
+                                <a href="tag.html?tag=读书笔记" class="tag">读书笔记</a>
+                                <a href="tag.html?tag=个人成长" class="tag">个人成长</a>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=5" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item" data-tags="创造力 头脑风暴">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-11-15" class="article-date">2023年11月15日</time>
+                                <span class="article-category">技术分享</span>
+                                <span class="reading-time">阅读时间 7 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=11">头脑风暴的艺术</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                头脑风暴不仅是团队协作的工具，更是个人创造力培养的重要方法。本文分享了一些有效的头脑风暴技巧和注意事项...
+                            </p>
+                            <div class="article-tags">
+                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
+                                <a href="tag.html?tag=头脑风暴" class="tag">头脑风暴</a>
+                                <a href="tag.html?tag=团队协作" class="tag">团队协作</a>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=11" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item" data-tags="创造力 创新思维">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-10-28" class="article-date">2023年10月28日</time>
+                                <span class="article-category">思考感悟</span>
+                                <span class="reading-time">阅读时间 9 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=12">创新思维的培养</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                创新思维不是天生的，而是可以通过系统的训练来培养。本文介绍了一些实用的创新思维训练方法和练习...
+                            </p>
+                            <div class="article-tags">
+                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
+                                <a href="tag.html?tag=创新思维" class="tag">创新思维</a>
+                                <a href="tag.html?tag=思维训练" class="tag">思维训练</a>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=12" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 列表视图 -->
+                <div class="articles-list view-list" id="articlesList" style="display: none;">
+                    <article class="article-list-item">
+                        <div class="article-list-content">
+                            <div class="article-list-header">
+                                <div class="article-list-meta">
+                                    <time datetime="2024-01-15" class="article-date">2024年1月15日</time>
+                                    <span class="article-category">思考感悟</span>
+                                    <span class="reading-time">8 分钟</span>
+                                </div>
+                                <h3 class="article-list-title">
+                                    <a href="article.html?id=1">关于创造力的思考</a>
+                                </h3>
+                            </div>
+                            <p class="article-list-excerpt">
+                                创造力不是魔法，而是一种可以通过练习培养的能力。在这篇文章中，我想分享一些关于如何培养和维持创造力的想法...
+                            </p>
+                            <div class="article-list-tags">
+                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
+                                <a href="tag.html?tag=思考" class="tag">思考</a>
+                                <a href="tag.html?tag=学习方法" class="tag">学习方法</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 更多列表项... -->
+                </div>
+
+                <!-- 分页导航 -->
+                <nav class="pagination" role="navigation" aria-label="文章分页">
+                    <ul class="pagination-list">
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="上一页">
+                                <span aria-hidden="true">←</span>
+                                上一页
+                            </a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link active" aria-label="第1页" aria-current="page">1</a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="第2页">2</a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="第3页">3</a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="下一页">
+                                下一页
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- 返回标签云 -->
+        <section class="back-to-tags">
+            <div class="container">
+                <a href="tags.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    返回标签云
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 我的个人博客. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
