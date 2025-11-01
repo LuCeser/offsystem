@@ -96,26 +96,66 @@
 **在标签页面添加标签**：
 ```html
 <!-- 标签云 -->
-<a href="#" class="tag-cloud tag-medium" data-count="文章数量">新标签</a>
+<a href="tag.html?tag=新标签" class="tag-cloud tag-medium" data-count="文章数量">新标签</a>
 
 <!-- 分类标签 -->
 <div class="tag-category">
     <div class="category-tags">
-        <a href="#" class="tag">新标签</a>
+        <a href="tag.html?tag=新标签" class="tag">新标签</a>
     </div>
 </div>
 
 <!-- 热门标签 -->
 <div class="popular-tag-item">
     <h4 class="popular-tag-name">
-        <a href="#">新标签</a>
+        <a href="tag.html?tag=新标签">新标签</a>
     </h4>
     <p class="popular-tag-count">文章数量 篇文章</p>
     <p class="popular-tag-desc">标签描述...</p>
 </div>
 ```
 
-### 3. 创建新栏目
+**重要提示**：`tag.html` 是一个通用的标签文章列表页面，通过URL参数 `?tag=标签名` 来动态显示不同标签的内容。无需为每个标签创建单独页面。
+
+### 3. 标签页面功能
+
+#### 标签文章列表页面
+
+`tag.html` 是一个通用的标签文章列表页面，支持以下功能：
+
+1. **动态内容**：根据URL参数 `?tag=标签名` 显示不同标签的内容
+2. **双视图模式**：支持网格视图和列表视图切换
+3. **标签统计**：显示文章数量、相关栏目、阅读量等统计信息
+4. **相关标签**：推荐相关标签，便于探索更多内容
+5. **响应式设计**：完美适配各种设备
+
+#### URL格式
+
+```
+tag.html?tag=创造力
+tag.html?tag=设计哲学
+tag.html?tag=个人成长
+```
+
+#### 动态内容映射
+
+页面会根据标签名自动更新：
+- 页面标题
+- 标签描述
+- 相关标签推荐
+
+#### 扩展标签描述
+
+在 `js/main.js` 的 `updateTagContent` 函数中添加新的标签描述：
+
+```javascript
+const tagDescriptions = {
+    '新标签': '新标签的描述...',
+    // 添加更多标签描述
+};
+```
+
+### 4. 创建新栏目
 
 如果需要添加新栏目：
 
