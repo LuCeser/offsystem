@@ -33,7 +33,7 @@
                             <li><a href="weekly.html" class="dropdown-link">周刊</a></li>
                         </ul>
                     </li>
-                    <li><a href="../articles.html" class="nav-link">全部文章</a></li>
+                    <li><a href="../collection/inside.html" class="nav-link">全部文章</a></li>
                     <li><a href="../tags.html" class="nav-link">标签</a></li>
                     <li><a href="../about.html" class="nav-link">关于</a></li>
                 </ul>
@@ -70,7 +70,7 @@
                         </svg>
                     </div>
                     <h1 class="collection-title">编内</h1>
-                    <p class="collection-description">工作项目中的经验积累和技术实践总结</p>
+                    <p class="collection-description">在系统之内，理解复杂与秩序。</p>
                     <div class="collection-meta">
                         <span class="collection-stat">20 篇文章</span>
                         <span class="collection-stat">12 个标签</span>
@@ -109,106 +109,30 @@
         <section class="collection-articles">
             <div class="container">
                 <div class="articles-grid">
-                    <article class="article-item" data-tags="项目实战 性能优化">
+                    <article class="article-item" data-tags="网络安全 HTTPS 中间人攻击">
                         <div class="article-content">
                             <div class="article-meta">
-                                <time datetime="2024-01-20" class="article-date">2024年1月20日</time>
-                                <span class="reading-time">阅读时间 12 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="../article.html?id=13">电商平台性能优化实战</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                通过对电商平台的性能瓶颈分析和系统优化，我们成功将页面加载时间减少了60%。本文详细记录了整个优化过程和关键决策点...
-                            </p>
-                            <div class="article-tags">
-                                <span class="tag">项目实战</span>
-                                <span class="tag">性能优化</span>
-                                <span class="tag">架构设计</span>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="../article.html?id=13" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-item" data-tags="团队协作 技术管理">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2024-01-18" class="article-date">2024年1月18日</time>
-                                <span class="reading-time">阅读时间 8 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="../article.html?id=14">构建高效技术团队的实践经验</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                在过去的一年中，我带领团队完成了多个重要项目。这篇文章总结了我在技术团队管理方面的经验和教训...
-                            </p>
-                            <div class="article-tags">
-                                <span class="tag">团队协作</span>
-                                <span class="tag">技术管理</span>
-                                <span class="tag">最佳实践</span>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="../article.html?id=14" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-item" data-tags="代码质量 最佳实践">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2024-01-15" class="article-date">2024年1月15日</time>
+                                <time datetime="2020-07-30" class="article-date">2020年7月30日</time>
                                 <span class="reading-time">阅读时间 10 分钟</span>
                             </div>
                             <h2 class="article-title">
-                                <a href="../article.html?id=15">重构大型遗留系统的策略与实践</a>
+                                <a href="../articles/mitm.html">御敌于外：配置HSTS防御中间人攻击</a>
                             </h2>
                             <p class="article-excerpt">
-                                面对一个存在5年之久的大型遗留系统，我们需要在不影响业务的前提下进行系统性重构。本文分享了我们的重构策略和具体实施步骤...
+                                之前在自己的服务器上架设了博客并发布到了公网，考虑到安全性还特意加了HTTPS支持。稳定运行一段时间之后忽然就无法访问了，浏览器提示重定向次数过多。通过分析nginx日志，发现了一场针对HTTPS重定向的中间人攻击...
                             </p>
                             <div class="article-tags">
-                                <span class="tag">代码质量</span>
-                                <span class="tag">架构设计</span>
-                                <span class="tag">重构</span>
+                                <span class="tag">网络安全</span>
+                                <span class="tag">HTTPS</span>
+                                <span class="tag">中间人攻击</span>
+                                <span class="tag">HSTS</span>
+                                <span class="tag">Nginx</span>
                             </div>
                             <div class="article-footer">
                                 <div class="article-author">
                                     <span class="author-name">作者</span>
                                 </div>
-                                <a href="../article.html?id=15" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-item" data-tags="项目实战 架构设计">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2024-01-12" class="article-date">2024年1月12日</time>
-                                <span class="reading-time">阅读时间 15 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="../article.html?id=16">微服务架构下的分布式事务处理</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                在微服务架构中，分布式事务一直是一个技术难题。我们通过引入事件驱动架构和最终一致性，成功解决了这个问题...
-                            </p>
-                            <div class="article-tags">
-                                <span class="tag">项目实战</span>
-                                <span class="tag">架构设计</span>
-                                <span class="tag">微服务</span>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="../article.html?id=16" class="read-more">继续阅读 →</a>
+                                <a href="../articles/mitm.html" class="read-more">继续阅读 →</a>
                             </div>
                         </div>
                     </article>

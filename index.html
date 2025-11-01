@@ -33,7 +33,7 @@
                             <li><a href="collection/weekly.html" class="dropdown-link">周刊</a></li>
                         </ul>
                     </li>
-                    <li><a href="articles.html" class="nav-link">全部文章</a></li>
+                    <li><a href="collection/inside.html" class="nav-link">全部文章</a></li>
                     <li><a href="tags.html" class="nav-link">标签</a></li>
                     <li><a href="about.html" class="nav-link">关于</a></li>
                 </ul>
@@ -48,9 +48,11 @@
         <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">思考的痕迹</h1>
-                    <p class="hero-subtitle">记录想法，分享见解，在文字中寻找答案</p>
-                    <a href="articles.html" class="cta-button">开始阅读</a>
+                    <h1 class="hero-title">欢迎来到 编外人</h1>
+                    <p class="hero-subtitle">我是一名软件工程师，也是一名长期主义者。</p>
+                    <p class="hero-subtitle">在 编内，我写代码、设计系统，探索复杂世界的秩序。</p>
+                    <p class="hero-subtitle">在 编外，我阅读、写作，理解人类与时间的系统。</p>
+                    <a href="collection/inside.html" class="cta-button">开始阅读</a>
                 </div>
             </div>
         </section>
@@ -72,7 +74,7 @@
                             </svg>
                         </div>
                         <h3 class="collection-title">编内</h3>
-                        <p class="collection-description">工作项目中的经验积累和技术实践总结</p>
+                        <p class="collection-description">在系统之内，理解复杂与秩序。</p>
                         <div class="collection-stats">
                             <span class="stat">20 篇文章</span>
                             <span class="stat">12 个标签</span>
@@ -88,7 +90,7 @@
                             </svg>
                         </div>
                         <h3 class="collection-title">编外</h3>
-                        <p class="collection-description">主流之外的独立思考和个人探索</p>
+                        <p class="collection-description">离开代码，重新理解系统与人。</p>
                         <div class="collection-stats">
                             <span class="stat">15 篇文章</span>
                             <span class="stat">10 个标签</span>
@@ -107,7 +109,7 @@
                             </svg>
                         </div>
                         <h3 class="collection-title">周刊</h3>
-                        <p class="collection-description">每周精选内容汇总，记录成长轨迹</p>
+                        <p class="collection-description">记录时间流里的输入与思考。</p>
                         <div class="collection-stats">
                             <span class="stat">8 期</span>
                             <span class="stat">持续更新</span>
@@ -129,45 +131,13 @@
                     <article class="post-card featured">
                         <div class="post-content">
                             <div class="post-meta">
-                                <time datetime="2024-01-15" class="post-date">2024年1月15日</time>
-                                <span class="post-category">思考</span>
+                                <time datetime="2020-07-30" class="post-date">2020年7月30日</time>
+                                <span class="post-category">编内</span>
                             </div>
                             <h3 class="post-title">
-                                <a href="article.html?id=1">关于创造力的思考</a>
+                                <a href="articles/mitm.html">御敌于外：配置HSTS防御中间人攻击</a>
                             </h3>
-                            <p class="post-excerpt">创造力不是魔法，而是一种可以通过练习培养的能力。在这篇文章中，我想分享一些关于如何培养和维持创造力的想法...</p>
-                            <div class="post-author">
-                                <span class="author-name">作者</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <time datetime="2024-01-10" class="post-date">2024年1月10日</time>
-                                <span class="post-category">技术</span>
-                            </div>
-                            <h3 class="post-title">
-                                <a href="article.html?id=2">简约设计的力量</a>
-                            </h3>
-                            <p class="post-excerpt">在信息过载的时代，简约设计不仅是一种美学选择，更是一种哲学态度。减法往往比加法更有力量...</p>
-                            <div class="post-author">
-                                <span class="author-name">作者</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <time datetime="2024-01-05" class="post-date">2024年1月5日</time>
-                                <span class="post-category">生活</span>
-                            </div>
-                            <h3 class="post-title">
-                                <a href="article.html?id=3">阅读的意义</a>
-                            </h3>
-                            <p class="post-excerpt">在这个碎片化阅读的时代，深度阅读显得格外珍贵。阅读不仅是获取知识的方式，更是一种生活态度...</p>
+                            <p class="post-excerpt">之前在自己的服务器上架设了博客并发布到了公网，考虑到安全性还特意加了HTTPS支持。稳定运行一段时间之后忽然就无法访问了，浏览器提示重定向次数过多。通过分析nginx日志，发现了一场针对HTTPS重定向的中间人攻击...</p>
                             <div class="post-author">
                                 <span class="author-name">作者</span>
                             </div>
@@ -181,11 +151,22 @@
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
-                        <h2 class="about-title">关于这个博客</h2>
-                        <p class="about-description">
-                            这里是我记录思考、分享见解的地方。我相信文字的力量，也相信持续思考的价值。
-                            通过写作，我整理思路，加深理解，也希望能够与志同道合的人产生共鸣。
-                        </p>
+                        <h2 class="about-title">关于编外人</h2>
+                        <div class="about-description">
+                            <p>在<strong>编内</strong>，这里是我的「工程世界」。</p>
+                            <p>我写代码、搭系统、修 bug，也在思考系统的边界与人性的交汇。</p>
+                            <p>我相信好的程序员不只是写出可运行的代码，更是理解复杂系统的人。</p>
+                        </div>
+                        <div class="about-description">
+                            <p>在<strong>编外</strong>，这是我为自己保留的一块安静的思想空间。</p>
+                            <p>在"编外"的世界里，我读书、听播客、写下对世界的感受。</p>
+                            <p>这里的内容可能是一本书引发的思考，也可能是一次日常观察。</p>
+                        </div>
+                        <div class="about-description">
+                            <p>在<strong>周刊</strong>，每周我都会发布一篇 Weekly Journal，</p>
+                            <p>回顾我看过的文章、读过的书、听过的播客，以及由此引发的思考。</p>
+                            <p>它不是资讯汇总，而是一个思想日志：记录我这一周在「编内」与「编外」之间的来回穿梭。</p>
+                        </div>
                         <a href="about.html" class="text-link">了解更多 →</a>
                     </div>
                 </div>
