@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="个人博客 - 记录思考与成长">
+    <meta name="author" content="Blog Author">
+    <title>我的个人博客</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">我的博客</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">首页</a></li>
+                    <li><a href="articles.html" class="nav-link">文章</a></li>
+                    <li><a href="about.html" class="nav-link">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">思考的痕迹</h1>
+                    <p class="hero-subtitle">记录想法，分享见解，在文字中寻找答案</p>
+                    <a href="articles.html" class="cta-button">开始阅读</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-posts">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">精选文章</h2>
+                    <div class="section-divider"></div>
+                </header>
+
+                <div class="posts-grid">
+                    <article class="post-card featured">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time datetime="2024-01-15" class="post-date">2024年1月15日</time>
+                                <span class="post-category">思考</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="article.html?id=1">关于创造力的思考</a>
+                            </h3>
+                            <p class="post-excerpt">创造力不是魔法，而是一种可以通过练习培养的能力。在这篇文章中，我想分享一些关于如何培养和维持创造力的想法...</p>
+                            <div class="post-author">
+                                <span class="author-name">作者</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time datetime="2024-01-10" class="post-date">2024年1月10日</time>
+                                <span class="post-category">技术</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="article.html?id=2">简约设计的力量</a>
+                            </h3>
+                            <p class="post-excerpt">在信息过载的时代，简约设计不仅是一种美学选择，更是一种哲学态度。减法往往比加法更有力量...</p>
+                            <div class="post-author">
+                                <span class="author-name">作者</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <time datetime="2024-01-05" class="post-date">2024年1月5日</time>
+                                <span class="post-category">生活</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="article.html?id=3">阅读的意义</a>
+                            </h3>
+                            <p class="post-excerpt">在这个碎片化阅读的时代，深度阅读显得格外珍贵。阅读不仅是获取知识的方式，更是一种生活态度...</p>
+                            <div class="post-author">
+                                <span class="author-name">作者</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-preview">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="about-title">关于这个博客</h2>
+                        <p class="about-description">
+                            这里是我记录思考、分享见解的地方。我相信文字的力量，也相信持续思考的价值。
+                            通过写作，我整理思路，加深理解，也希望能够与志同道合的人产生共鸣。
+                        </p>
+                        <a href="about.html" class="text-link">了解更多 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 我的个人博客. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

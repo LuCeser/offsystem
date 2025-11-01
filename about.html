@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="关于我 - 个人博客">
+    <meta name="author" content="Blog Author">
+    <title>关于我 - 我的个人博客</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">我的博客</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">首页</a></li>
+                    <li><a href="articles.html" class="nav-link">文章</a></li>
+                    <li><a href="about.html" class="nav-link active">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <!-- 面包屑导航 -->
+        <div class="container">
+            <nav class="breadcrumb" role="navigation" aria-label="面包屑导航">
+                <div class="breadcrumb-item">
+                    <a href="index.html" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">关于</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 页面头部 -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero-content">
+                    <h1 class="about-title">关于我</h1>
+                    <p class="about-subtitle">一个热爱思考、喜欢记录的人</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人介绍 -->
+        <section class="about-intro">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="large">
+                            你好，欢迎来到我的个人博客。我是一个热爱思考和记录的人，喜欢通过写作来整理思路、分享见解。
+                        </p>
+
+                        <p>
+                            这个博客是我记录思考过程的地方。我相信写作不仅是一种表达方式，更是一种思考工具。
+                            通过将模糊的想法转化为具体的文字，我们能够更清晰地理解自己的观点，发现思维中的盲点。
+                        </p>
+
+                        <p>
+                            在这个信息爆炸的时代，深度思考显得格外珍贵。我希望通过这个博客，创造一个安静的空间，
+                            让我们能够停下来，思考一些真正重要的问题。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 我的价值观 -->
+        <section class="values-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">我的价值观</h2>
+                    <div class="section-divider"></div>
+                </header>
+
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">追求卓越</h3>
+                        <p class="value-description">
+                            相信通过持续的努力和学习，我们可以在自己选择的领域达到更高的水平。
+                        </p>
+                    </div>
+
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">终身学习</h3>
+                        <p class="value-description">
+                            保持好奇心，永远对新知识、新技能保持开放的态度。
+                        </p>
+                    </div>
+
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">深度思考</h3>
+                        <p class="value-description">
+                            在快节奏的世界中，坚持慢下来，进行深入和系统的思考。
+                        </p>
+                    </div>
+
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 010 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">分享与连接</h3>
+                        <p class="value-description">
+                            相信分享的力量，通过写作与他人建立有意义的连接。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能与兴趣 -->
+        <section class="skills-interests">
+            <div class="container">
+                <div class="two-column">
+                    <div class="column">
+                        <h3 class="column-title">技能领域</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item">
+                                <span class="skill-name">技术写作</span>
+                                <span class="skill-level">高级</span>
+                            </li>
+                            <li class="skill-item">
+                                <span class="skill-name">产品设计</span>
+                                <span class="skill-level">中级</span>
+                            </li>
+                            <li class="skill-item">
+                                <span class="skill-name">用户研究</span>
+                                <span class="skill-level">中级</span>
+                            </li>
+                            <li class="skill-item">
+                                <span class="skill-name">前端开发</span>
+                                <span class="skill-level">中级</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="column">
+                        <h3 class="column-title">兴趣爱好</h3>
+                        <ul class="interest-list">
+                            <li class="interest-item">阅读（文学、哲学、科技）</li>
+                            <li class="interest-item">摄影</li>
+                            <li class="interest-item">远足和自然探索</li>
+                            <li class="interest-item">咖啡文化</li>
+                            <li class="interest-item">音乐欣赏</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section class="contact-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">联系我</h2>
+                    <div class="section-divider"></div>
+                </header>
+
+                <div class="contact-content">
+                    <p class="contact-description">
+                        如果你对我的文章有任何想法，或者想要讨论相关话题，欢迎通过以下方式联系我。
+                        我很期待听到不同的声音和观点。
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <h4>邮箱</h4>
+                                <a href="mailto:hello@example.com">hello@example.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/username" target="_blank" rel="noopener">github.com/username</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-info">
+                                <h4>Twitter</h4>
+                                <a href="https://twitter.com/username" target="_blank" rel="noopener">@username</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 博客说明 -->
+        <section class="blog-info">
+            <div class="container">
+                <div class="blog-info-content">
+                    <h3>关于这个博客</h3>
+                    <p>
+                        这个博客创建于2024年，旨在记录我的思考过程和学习心得。我相信通过写作，
+                        不仅可以帮助自己更好地理解世界，也能够为他人提供一些有价值的观点。
+                    </p>
+                    <p>
+                        博客的内容主要围绕个人成长、技术思考、生活感悟等主题。我希望这里能够成为一个
+                        让人安静思考的地方，一个能够进行深度对话的空间。
+                    </p>
+
+                    <div class="blog-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">文章</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">读者</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2年</span>
+                            <span class="stat-label">坚持写作</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 我的个人博客. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 编辑器和IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 临时文件
+*.tmp
+*.temp
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+
+# 备份文件
+*.bak
+*.backup
+
+# 缓存文件
+.cache/
+
+# 本地配置文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 如果将来使用Node.js
+node_modules/
+dist/
+build/
+
+# 如果使用Sass
+.sass-cache/
+
+# 如果使用Jekyll或其他静态站点生成器
+_site/
+.jekyll-cache/
+
+# 图片优化工具生成的文件
+*.min.css
+*.min.js
+
+# 浏览器同步文件
+.browser-sync/
+
+# 热重载文件
+.hot-update.*
+
+# 本地服务器文件
+*.pid
+
+# 性能测试报告
+coverage/
+.nyc_output/
+
+# 文档生成文件
+docs/_build/
+
+# 个人笔记和草稿
+notes/
+drafts/
+*.draft.md
+
+# Claude Code配置文件
+.claude/

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="所有文章 - 个人博客">
+    <meta name="author" content="Blog Author">
+    <title>所有文章 - 我的个人博客</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">我的博客</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">首页</a></li>
+                    <li><a href="articles.html" class="nav-link active">文章</a></li>
+                    <li><a href="about.html" class="nav-link">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <!-- 面包屑导航 -->
+        <div class="container">
+            <nav class="breadcrumb" role="navigation" aria-label="面包屑导航">
+                <div class="breadcrumb-item">
+                    <a href="index.html" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <a href="articles.html" class="breadcrumb-link">文章</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 页面头部 -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">所有文章</h1>
+                    <p class="page-subtitle">记录思考，分享见解，在文字中寻找答案</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 搜索和筛选 -->
+        <section class="search-filter-section">
+            <div class="container">
+                <div class="search-box">
+                    <input type="search" class="search-input" placeholder="搜索文章..." aria-label="搜索文章">
+                    <button type="submit" class="search-button" aria-label="搜索">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="filter-tags">
+                    <button class="tag active" data-category="all">全部</button>
+                    <button class="tag" data-category="thinking">思考</button>
+                    <button class="tag" data-category="technology">技术</button>
+                    <button class="tag" data-category="life">生活</button>
+                    <button class="tag" data-category="reading">阅读</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文章列表 -->
+        <section class="articles-section">
+            <div class="container">
+                <div class="articles-list">
+                    <article class="article-item">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2024-01-15" class="article-date">2024年1月15日</time>
+                                <span class="article-category">思考</span>
+                                <span class="reading-time">阅读时间 8 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=1">关于创造力的思考</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                创造力不是魔法，而是一种可以通过练习培养的能力。在这篇文章中，我想分享一些关于如何培养和维持创造力的想法。创造力不是与生俱来的天赋，而是可以通过正确的方法和环境培养的能力...
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=1" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2024-01-10" class="article-date">2024年1月10日</time>
+                                <span class="article-category">技术</span>
+                                <span class="reading-time">阅读时间 6 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=2">简约设计的力量</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                在信息过载的时代，简约设计不仅是一种美学选择，更是一种哲学态度。减法往往比加法更有力量。真正的简约不是简单，而是去除所有不必要的元素后剩下的精华...
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=2" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2024-01-05" class="article-date">2024年1月5日</time>
+                                <span class="article-category">生活</span>
+                                <span class="reading-time">阅读时间 5 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=3">阅读的意义</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                在这个碎片化阅读的时代，深度阅读显得格外珍贵。阅读不仅是获取知识的方式，更是一种生活态度。通过阅读，我们能够与智者对话，拓展视野，丰富内心世界...
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=3" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-12-28" class="article-date">2023年12月28日</time>
+                                <span class="article-category">思考</span>
+                                <span class="reading-time">阅读时间 7 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=4">孤独的价值</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                独处不是孤独，而是与自己对话的珍贵时光。在这个高度连接的时代，我们往往害怕独处，但实际上，独处是创造力和自我发现的源泉。学会享受独处，是现代人重要的心理技能...
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=4" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-12-20" class="article-date">2023年12月20日</time>
+                                <span class="article-category">阅读</span>
+                                <span class="reading-time">阅读时间 10 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=5">好书推荐：年度阅读总结</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                回顾这一年的阅读历程，有一些书给我留下了深刻的印象。从文学到哲学，从技术到艺术，每本书都为我打开了新的视野。在这里分享一些值得推荐的好书...
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=5" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2023-12-15" class="article-date">2023年12月15日</time>
+                                <span class="article-category">技术</span>
+                                <span class="reading-time">阅读时间 8 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="article.html?id=6">代码即诗歌</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                优秀的代码就像诗歌一样，简洁、优雅、富有表现力。在追求功能的同时，我们也不应该忘记代码的美学价值。好的代码不仅要能运行，更要易于理解和维护...
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="article.html?id=6" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- 分页导航 -->
+                <nav class="pagination" role="navigation" aria-label="文章分页">
+                    <ul class="pagination-list">
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="上一页">
+                                <span aria-hidden="true">←</span>
+                                上一页
+                            </a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link active" aria-label="第1页" aria-current="page">1</a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="第2页">2</a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="第3页">3</a>
+                        </li>
+                        <li class="pagination-item">
+                            <a href="#" class="pagination-link" aria-label="下一页">
+                                下一页
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 我的个人博客. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
