@@ -21,18 +21,16 @@
         <div class="container">
             <nav class="main-nav" role="navigation" aria-label="主导航">
                 <div class="nav-brand">
-                    <a href="../index.html" class="brand-link">我的博客</a>
+                    <a href="../index.html" class="brand-link">编外</a>
                 </div>
                 <ul class="nav-list">
                     <li><a href="../index.html" class="nav-link">首页</a></li>
                     <li class="nav-dropdown">
                         <a href="#" class="nav-link active">栏目 <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="thinking.html" class="dropdown-link active">编内</a></li>
-                            <li><a href="technology.html" class="dropdown-link">编内</a></li>
-                            <li><a href="reading.html" class="dropdown-link">编外</a></li>
-                            <li><a href="life.html" class="dropdown-link">编外</a></li>
-                            <li><a href="works.html" class="dropdown-link">周刊</a></li>
+                            <li><a href="inside.html" class="dropdown-link active">编内</a></li>
+                            <li><a href="outside.html" class="dropdown-link">编外</a></li>
+                            <li><a href="weekly.html" class="dropdown-link">周刊</a></li>
                         </ul>
                     </li>
                     <li><a href="../articles.html" class="nav-link">全部文章</a></li>
@@ -66,17 +64,17 @@
                 <div class="collection-hero">
                     <div class="collection-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 11H3v10h6V11z"></path>
-                            <path d="M15 3H9v18h6V3z"></path>
-                            <path d="M21 7h-6v14h6V7z"></path>
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
                         </svg>
                     </div>
                     <h1 class="collection-title">编内</h1>
-                    <p class="collection-description">关于生活、哲学和个人成长的深度思考</p>
+                    <p class="collection-description">工作项目中的经验积累和技术实践总结</p>
                     <div class="collection-meta">
-                        <span class="collection-stat">12 篇文章</span>
-                        <span class="collection-stat">8 个标签</span>
-                        <span class="collection-stat">更新于 2024年1月15日</span>
+                        <span class="collection-stat">20 篇文章</span>
+                        <span class="collection-stat">12 个标签</span>
+                        <span class="collection-stat">更新于 2024年1月20日</span>
                     </div>
                 </div>
             </div>
@@ -95,13 +93,13 @@
                 <div class="filter-tags-container">
                     <div class="filter-tags">
                         <button class="tag active" data-tag="all">全部</button>
-                        <button class="tag" data-tag="哲学">哲学</button>
-                        <button class="tag" data-tag="人生">人生</button>
-                        <button class="tag" data-tag="成长">成长</button>
-                        <button class="tag" data-tag="思考">思考</button>
-                        <button class="tag" data-tag="价值观">价值观</button>
-                        <button class="tag" data-tag="自我认知">自我认知</button>
-                        <button class="tag" data-tag="生活智慧">生活智慧</button>
+                        <button class="tag" data-tag="项目实战">项目实战</button>
+                        <button class="tag" data-tag="架构设计">架构设计</button>
+                        <button class="tag" data-tag="性能优化">性能优化</button>
+                        <button class="tag" data-tag="团队协作">团队协作</button>
+                        <button class="tag" data-tag="代码质量">代码质量</button>
+                        <button class="tag" data-tag="最佳实践">最佳实践</button>
+                        <button class="tag" data-tag="技术管理">技术管理</button>
                     </div>
                 </div>
             </div>
@@ -111,106 +109,106 @@
         <section class="collection-articles">
             <div class="container">
                 <div class="articles-grid">
-                    <article class="article-item" data-tags="哲学 思考">
+                    <article class="article-item" data-tags="项目实战 性能优化">
                         <div class="article-content">
                             <div class="article-meta">
-                                <time datetime="2024-01-15" class="article-date">2024年1月15日</time>
+                                <time datetime="2024-01-20" class="article-date">2024年1月20日</time>
+                                <span class="reading-time">阅读时间 12 分钟</span>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="../article.html?id=13">电商平台性能优化实战</a>
+                            </h2>
+                            <p class="article-excerpt">
+                                通过对电商平台的性能瓶颈分析和系统优化，我们成功将页面加载时间减少了60%。本文详细记录了整个优化过程和关键决策点...
+                            </p>
+                            <div class="article-tags">
+                                <span class="tag">项目实战</span>
+                                <span class="tag">性能优化</span>
+                                <span class="tag">架构设计</span>
+                            </div>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <span class="author-name">作者</span>
+                                </div>
+                                <a href="../article.html?id=13" class="read-more">继续阅读 →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-item" data-tags="团队协作 技术管理">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <time datetime="2024-01-18" class="article-date">2024年1月18日</time>
                                 <span class="reading-time">阅读时间 8 分钟</span>
                             </div>
                             <h2 class="article-title">
-                                <a href="../article.html?id=1">关于创造力的思考</a>
+                                <a href="../article.html?id=14">构建高效技术团队的实践经验</a>
                             </h2>
                             <p class="article-excerpt">
-                                创造力不是魔法，而是一种可以通过练习培养的能力。在这篇文章中，我想分享一些关于如何培养和维持创造力的想法...
+                                在过去的一年中，我带领团队完成了多个重要项目。这篇文章总结了我在技术团队管理方面的经验和教训...
                             </p>
                             <div class="article-tags">
-                                <span class="tag">创造力</span>
-                                <span class="tag">思考</span>
-                                <span class="tag">学习方法</span>
+                                <span class="tag">团队协作</span>
+                                <span class="tag">技术管理</span>
+                                <span class="tag">最佳实践</span>
                             </div>
                             <div class="article-footer">
                                 <div class="article-author">
                                     <span class="author-name">作者</span>
                                 </div>
-                                <a href="../article.html?id=1" class="read-more">继续阅读 →</a>
+                                <a href="../article.html?id=14" class="read-more">继续阅读 →</a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="article-item" data-tags="人生 自我认知">
+                    <article class="article-item" data-tags="代码质量 最佳实践">
                         <div class="article-content">
                             <div class="article-meta">
-                                <time datetime="2023-12-28" class="article-date">2023年12月28日</time>
-                                <span class="reading-time">阅读时间 7 分钟</span>
+                                <time datetime="2024-01-15" class="article-date">2024年1月15日</time>
+                                <span class="reading-time">阅读时间 10 分钟</span>
                             </div>
                             <h2 class="article-title">
-                                <a href="../article.html?id=4">孤独的价值</a>
+                                <a href="../article.html?id=15">重构大型遗留系统的策略与实践</a>
                             </h2>
                             <p class="article-excerpt">
-                                独处不是孤独，而是与自己对话的珍贵时光。在这个高度连接的时代，我们往往害怕独处，但实际上，独处是创造力和自我发现的源泉...
+                                面对一个存在5年之久的大型遗留系统，我们需要在不影响业务的前提下进行系统性重构。本文分享了我们的重构策略和具体实施步骤...
                             </p>
                             <div class="article-tags">
-                                <span class="tag">孤独</span>
-                                <span class="tag">自我发现</span>
-                                <span class="tag">内省</span>
+                                <span class="tag">代码质量</span>
+                                <span class="tag">架构设计</span>
+                                <span class="tag">重构</span>
                             </div>
                             <div class="article-footer">
                                 <div class="article-author">
                                     <span class="author-name">作者</span>
                                 </div>
-                                <a href="../article.html?id=4" class="read-more">继续阅读 →</a>
+                                <a href="../article.html?id=15" class="read-more">继续阅读 →</a>
                             </div>
                         </div>
                     </article>
 
-                    <article class="article-item" data-tags="价值观 生活智慧">
+                    <article class="article-item" data-tags="项目实战 架构设计">
                         <div class="article-content">
                             <div class="article-meta">
-                                <time datetime="2023-12-10" class="article-date">2023年12月10日</time>
-                                <span class="reading-time">阅读时间 6 分钟</span>
+                                <time datetime="2024-01-12" class="article-date">2024年1月12日</time>
+                                <span class="reading-time">阅读时间 15 分钟</span>
                             </div>
                             <h2 class="article-title">
-                                <a href="../article.html?id=7">简单生活的艺术</a>
+                                <a href="../article.html?id=16">微服务架构下的分布式事务处理</a>
                             </h2>
                             <p class="article-excerpt">
-                                在这个物质丰富的时代，简单生活成为一种反叛。通过减少物质追求，我们能够获得更多的内心平静和自由...
+                                在微服务架构中，分布式事务一直是一个技术难题。我们通过引入事件驱动架构和最终一致性，成功解决了这个问题...
                             </p>
                             <div class="article-tags">
-                                <span class="tag">极简主义</span>
-                                <span class="tag">生活哲学</span>
-                                <span class="tag">幸福感</span>
+                                <span class="tag">项目实战</span>
+                                <span class="tag">架构设计</span>
+                                <span class="tag">微服务</span>
                             </div>
                             <div class="article-footer">
                                 <div class="article-author">
                                     <span class="author-name">作者</span>
                                 </div>
-                                <a href="../article.html?id=7" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-item" data-tags="成长 人生">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2023-11-25" class="article-date">2023年11月25日</time>
-                                <span class="reading-time">阅读时间 9 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="../article.html?id=8">关于成长的思考</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                成长不是线性的进步，而是螺旋式的上升。每一次挫折都是成长的机会，每一次反思都让我们更接近真实的自己...
-                            </p>
-                            <div class="article-tags">
-                                <span class="tag">个人成长</span>
-                                <span class="tag">心理发展</span>
-                                <span class="tag">自我认知</span>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="../article.html?id=8" class="read-more">继续阅读 →</a>
+                                <a href="../article.html?id=16" class="read-more">继续阅读 →</a>
                             </div>
                         </div>
                     </article>
