@@ -701,22 +701,143 @@
 
 /* 文章内容样式 */
 .article-content {
-  max-width: 42rem;
-  margin: 0 auto;
   font-size: var(--text-lg);
   line-height: var(--leading-loose);
+}
+
+/* 文章内容容器 - 统一所有内容的宽度 */
+.article-content .container {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* 响应式阅读宽度 */
+@media (min-width: 1024px) {
+  .article-content .container {
+    max-width: 52rem; /* 约832px，适合桌面阅读 */
+    padding: 0 var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .article-content .container {
+    max-width: 60rem; /* 约960px，大屏幕优化 */
+    padding: 0 var(--space-10);
+  }
+}
+
+@media (min-width: 1536px) {
+  .article-content .container {
+    max-width: 68rem; /* 约1088px，超大屏幕 */
+    padding: 0 var(--space-12);
+  }
 }
 
 .article-content h2 {
   font-size: var(--text-3xl);
   margin-top: var(--space-12);
   margin-bottom: var(--space-6);
+  width: 100%;
 }
 
 .article-content h3 {
   font-size: var(--text-2xl);
   margin-top: var(--space-10);
   margin-bottom: var(--space-5);
+  width: 100%;
+}
+
+/* 确保所有块级元素遵循容器宽度约束 */
+.article-content p,
+.article-content ul,
+.article-content ol,
+.article-content blockquote,
+.article-content table {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 表格样式 */
+.article-content table {
+  border-collapse: collapse;
+  margin: var(--space-8) 0;
+  font-size: var(--text-sm);
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+}
+
+.article-content th {
+  background-color: var(--color-surface);
+  font-weight: 600;
+}
+
+/* 媒体元素响应式处理 */
+.article-content img,
+.article-content video,
+.article-content iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: var(--space-6) auto;
+}
+
+/* 特殊处理：确保图片不会破坏文本流 */
+.article-content img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 周刊徽章样式 */
+.weekly-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.weekly-volume {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.weekly-date {
+  opacity: 0.9;
+}
+
+/* 文章图片样式 */
+.article-figure {
+  margin: var(--space-8) 0;
+  text-align: center;
+}
+
+.article-figure img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin: 0 auto;
+}
+
+.article-figure figcaption {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-secondary);
+  font-style: italic;
 }
 
 .article-content blockquote {
@@ -1404,6 +1525,19 @@
 .collection-hero {
   max-width: 48rem;
   margin: 0 auto;
+}
+
+/* 响应式栏目英雄区域宽度 */
+@media (min-width: 1024px) {
+  .collection-hero {
+    max-width: 56rem; /* 约896px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .collection-hero {
+    max-width: 64rem; /* 约1024px */
+  }
 }
 
 .collection-hero .collection-icon {

@@ -158,9 +158,22 @@ pre {
   font-size: var(--text-sm);
   line-height: var(--leading-normal);
   margin: var(--space-8) 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* 确保代码块在文章内容中不超出容器宽度 */
+.article-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* 对于超长代码行的特殊处理 */
 pre code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
   background: none;
   padding: 0;
 }
