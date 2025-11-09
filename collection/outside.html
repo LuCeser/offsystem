@@ -71,9 +71,9 @@
                     <h1 class="collection-title">编外</h1>
                     <p class="collection-description">离开代码，重新理解系统与人。</p>
                     <div class="collection-meta">
-                        <span class="collection-stat">1 篇文章</span>
-                        <span class="collection-stat">5 个标签</span>
-                        <span class="collection-stat">更新于 2023年8月4日</span>
+                        <span class="collection-stat" id="article-count">计算中...</span>
+                        <span class="collection-stat" id="tag-count">计算中...</span>
+                        <span class="collection-stat" id="last-updated">计算中...</span>
                     </div>
                 </div>
             </div>
@@ -90,15 +90,8 @@
                     </button>
                 </div>
                 <div class="filter-tags-container">
-                    <div class="filter-tags">
-                        <button class="tag active" data-tag="all">全部</button>
-                        <button class="tag" data-tag="思考">思考</button>
-                        <button class="tag" data-tag="哲学">哲学</button>
-                        <button class="tag" data-tag="创造力">创造力</button>
-                        <button class="tag" data-tag="学习方法">学习方法</button>
-                        <button class="tag" data-tag="生活感悟">生活感悟</button>
-                        <button class="tag" data-tag="编外">编外</button>
-                        <button class="tag" data-tag="个人成长">个人成长</button>
+                    <div class="filter-tags" id="filter-tags">
+                        <!-- 动态生成标签筛选按钮 -->
                     </div>
                 </div>
             </div>
@@ -175,5 +168,79 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        // 阅读时间计算函数（基于400字/分钟的平均阅读速度）
+        function calculateReadingTime(chineseChars, englishWords) {
+            const totalWords = chineseChars + englishWords;
+            const readingSpeed = 400; // 中文平均阅读速度：400字/分钟
+            const minutes = Math.ceil(totalWords / readingSpeed);
+            return minutes;
+        }
+
+        // 编外栏目的文章数据（基于实际字数计算）
+        const outsideArticles = [
+            {
+                title: "ChatGPT作为方法",
+                url: "../articles/chatgpt-as-method.html",
+                date: "2023年8月4日",
+                tags: ["ChatGPT", "AI工具", "学习方法", "效率提升", "费曼学习法"],
+                excerpt: "自今年年初ChatGPT引爆社交网络以来，我们第一次体验到了科幻作品中那种无所不能的人工智能。我认为，如果找到合适的用法，ChatGPT将极大的提升工作和学习效率...",
+                chineseChars: 1972,
+                englishWords: 15,
+                readingTime: calculateReadingTime(1972, 15)
+            }
+        ];
+
+        // 获取所有标签
+        function getAllTags() {
+            const tags = new Set();
+            outsideArticles.forEach(article => {
+                article.tags.forEach(tag => tags.add(tag));
+            });
+            return Array.from(tags).sort();
+        }
+
+        // 获取最新文章的日期
+        function getLatestDate() {
+            if (outsideArticles.length === 0) return '-';
+            const latest = outsideArticles.reduce((prev, current) =>
+                (new Date(current.date) > new Date(prev.date)) ? current : prev
+            );
+            return latest.date;
+        }
+
+        // 生成标签筛选按钮
+        function generateTagButtons() {
+            const filterTags = document.getElementById('filter-tags');
+            const allTags = getAllTags();
+
+            // 添加"全部"按钮
+            let buttonsHtml = '<button class="tag active" data-tag="all">全部</button>';
+
+            // 添加所有标签按钮
+            allTags.forEach(tag => {
+                buttonsHtml += `<button class="tag" data-tag="${encodeURIComponent(tag)}">${tag}</button>`;
+            });
+
+            filterTags.innerHTML = buttonsHtml;
+        }
+
+        // 更新统计信息
+        function updateStats() {
+            const articleCount = document.getElementById('article-count');
+            const tagCount = document.getElementById('tag-count');
+            const lastUpdated = document.getElementById('last-updated');
+
+            articleCount.textContent = `${outsideArticles.length} 篇文章`;
+            tagCount.textContent = `${getAllTags().length} 个标签`;
+            lastUpdated.textContent = `更新于 ${getLatestDate()}`;
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            generateTagButtons();
+            updateStats();
+        });
+    </script>
 </body>
 </html>

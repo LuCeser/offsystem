@@ -82,3 +82,7 @@ drafts/
 
 # Claude Code配置文件
 .claude/
+
+# 博客源文件和草稿（不包含在最终网站中）
+sources/
+*.draft.md

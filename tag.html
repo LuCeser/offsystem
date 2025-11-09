@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="标签文章列表 - 个人博客">
     <meta name="author" content="Blog Author">
-    <title>创造力 - 编外</title>
+    <title>标签文章 - 编外</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,7 @@
         <div class="container">
             <nav class="main-nav" role="navigation" aria-label="主导航">
                 <div class="nav-brand">
-                    <a href="index.html" class="brand-link">我的博客</a>
+                    <a href="index.html" class="brand-link">编外</a>
                 </div>
                 <ul class="nav-list">
                     <li><a href="index.html" class="nav-link">首页</a></li>
@@ -29,8 +29,6 @@
                         <a href="#" class="nav-link">栏目 <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu">
                             <li><a href="collection/inside.html" class="dropdown-link">编内</a></li>
-                            <li><a href="collection/inside.html" class="dropdown-link">编内</a></li>
-                            <li><a href="collection/outside.html" class="dropdown-link">编外</a></li>
                             <li><a href="collection/outside.html" class="dropdown-link">编外</a></li>
                             <li><a href="collection/weekly.html" class="dropdown-link">周刊</a></li>
                         </ul>
@@ -59,7 +57,7 @@
                     <span class="breadcrumb-separator">/</span>
                 </div>
                 <div class="breadcrumb-item">
-                    <span class="breadcrumb-current">创造力</span>
+                    <span class="breadcrumb-current" id="tag-name">加载中...</span>
                 </div>
             </nav>
         </div>
@@ -74,11 +72,11 @@
                             <line x1="7" y1="7" x2="7.01" y2="7"></line>
                         </svg>
                     </div>
-                    <h1 class="tag-title">创造力</h1>
-                    <p class="tag-description">关于创造性思维、创新能力培养和实践经验的文章</p>
+                    <h1 class="tag-title" id="tag-title">加载中...</h1>
+                    <p class="tag-description" id="tag-description">正在加载相关文章...</p>
                     <div class="tag-meta">
-                        <span class="tag-count">25 篇文章</span>
-                        <span class="tag-updated">更新于 2024年1月15日</span>
+                        <span class="tag-count" id="tag-count">0 篇文章</span>
+                        <span class="tag-updated">最后更新：<span id="tag-updated">-</span></span>
                     </div>
                 </div>
             </div>
@@ -89,38 +87,29 @@
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <div class="stat-number">25</div>
+                        <div class="stat-number" id="article-count">0</div>
                         <div class="stat-label">相关文章</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">8</div>
+                        <div class="stat-number" id="collection-count">0</div>
                         <div class="stat-label">相关栏目</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">1.2k</div>
-                        <div class="stat-label">总阅读量</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">4.8</div>
-                        <div class="stat-label">平均评分</div>
+                        <div class="stat-number" id="total-time">0分钟</div>
+                        <div class="stat-label">总阅读时间</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 相关标签 -->
-        <section class="related-tags">
+        <section class="related-tags" id="related-tags-section">
             <div class="container">
                 <header class="section-header">
                     <h3 class="section-title">相关标签</h3>
                 </header>
-                <div class="related-tags-list">
-                    <a href="tag.html?tag=思考" class="tag related-tag">思考</a>
-                    <a href="tag.html?tag=学习方法" class="tag related-tag">学习方法</a>
-                    <a href="tag.html?tag=个人成长" class="tag related-tag">个人成长</a>
-                    <a href="tag.html?tag=设计哲学" class="tag related-tag">设计哲学</a>
-                    <a href="tag.html?tag=创新思维" class="tag related-tag">创新思维</a>
-                    <a href="tag.html?tag=头脑风暴" class="tag related-tag">头脑风暴</a>
+                <div class="related-tags-list" id="related-tags">
+                    <!-- 动态生成相关标签 -->
                 </div>
             </div>
         </section>
@@ -130,233 +119,22 @@
             <div class="container">
                 <header class="section-header">
                     <h3 class="section-title">相关文章</h3>
-                    <div class="view-options">
-                        <button class="view-option active" data-view="grid">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="3" width="7" height="7"></rect>
-                                <rect x="14" y="14" width="7" height="7"></rect>
-                                <rect x="3" y="14" width="7" height="7"></rect>
-                            </svg>
-                        </button>
-                        <button class="view-option" data-view="list">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="8" y1="6" x2="21" y2="6"></line>
-                                <line x1="8" y1="12" x2="21" y2="12"></line>
-                                <line x1="8" y1="18" x2="21" y2="18"></line>
-                                <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                                <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                                <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
                 </header>
-
-                <!-- 网格视图 -->
-                <div class="articles-grid view-grid" id="articlesGrid">
-                    <article class="article-item" data-tags="创造力 思考">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2024-01-15" class="article-date">2024年1月15日</time>
-                                <span class="article-category">编内</span>
-                                <span class="reading-time">阅读时间 8 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="articles/mitm.html?id=1">关于创造力的思考</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                创造力不是魔法，而是一种可以通过练习培养的能力。在这篇文章中，我想分享一些关于如何培养和维持创造力的想法。创造力不是与生俱来的天赋，而是可以通过正确的方法和环境培养的能力...
-                            </p>
-                            <div class="article-tags">
-                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
-                                <a href="tag.html?tag=思考" class="tag">思考</a>
-                                <a href="tag.html?tag=学习方法" class="tag">学习方法</a>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="articles/mitm.html?id=1" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-item" data-tags="创造力 设计哲学">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2024-01-10" class="article-date">2024年1月10日</time>
-                                <span class="article-category">编内</span>
-                                <span class="reading-time">阅读时间 6 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="articles/mitm.html?id=2">简约设计的创造力</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                在信息过载的时代，简约设计不仅是一种美学选择，更是一种创造性的表达。通过减法而非加法，我们能够创造出更有力量和影响力的设计作品...
-                            </p>
-                            <div class="article-tags">
-                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
-                                <a href="tag.html?tag=设计哲学" class="tag">设计哲学</a>
-                                <a href="tag.html?tag=极简主义" class="tag">极简主义</a>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="articles/mitm.html?id=2" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-item" data-tags="创造力 个人成长">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2023-12-20" class="article-date">2023年12月20日</time>
-                                <span class="article-category">编外</span>
-                                <span class="reading-time">阅读时间 10 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="articles/mitm.html?id=5">《创造力的跃迁》编外</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                这本书深入探讨了创造力的本质和培养方法。作者通过大量的案例和科学研究，揭示了创造力的运作机制，以及如何在日常生活和工作中激发创造力...
-                            </p>
-                            <div class="article-tags">
-                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
-                                <a href="tag.html?tag=编外" class="tag">编外</a>
-                                <a href="tag.html?tag=个人成长" class="tag">个人成长</a>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="articles/mitm.html?id=5" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-item" data-tags="创造力 头脑风暴">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2023-11-15" class="article-date">2023年11月15日</time>
-                                <span class="article-category">编内</span>
-                                <span class="reading-time">阅读时间 7 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="articles/mitm.html?id=11">头脑风暴的艺术</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                头脑风暴不仅是团队协作的工具，更是个人创造力培养的重要方法。本文分享了一些有效的头脑风暴技巧和注意事项...
-                            </p>
-                            <div class="article-tags">
-                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
-                                <a href="tag.html?tag=头脑风暴" class="tag">头脑风暴</a>
-                                <a href="tag.html?tag=团队协作" class="tag">团队协作</a>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="articles/mitm.html?id=11" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="article-item" data-tags="创造力 创新思维">
-                        <div class="article-content">
-                            <div class="article-meta">
-                                <time datetime="2023-10-28" class="article-date">2023年10月28日</time>
-                                <span class="article-category">编内</span>
-                                <span class="reading-time">阅读时间 9 分钟</span>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="articles/mitm.html?id=12">创新思维的培养</a>
-                            </h2>
-                            <p class="article-excerpt">
-                                创新思维不是天生的，而是可以通过系统的训练来培养。本文介绍了一些实用的创新思维训练方法和练习...
-                            </p>
-                            <div class="article-tags">
-                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
-                                <a href="tag.html?tag=创新思维" class="tag">创新思维</a>
-                                <a href="tag.html?tag=思维训练" class="tag">思维训练</a>
-                            </div>
-                            <div class="article-footer">
-                                <div class="article-author">
-                                    <span class="author-name">作者</span>
-                                </div>
-                                <a href="articles/mitm.html?id=12" class="read-more">继续阅读 →</a>
-                            </div>
-                        </div>
-                    </article>
+                <div class="posts-grid" id="articles-grid">
+                    <!-- 动态生成文章列表 -->
                 </div>
 
-                <!-- 列表视图 -->
-                <div class="articles-list view-list" id="articlesList" style="display: none;">
-                    <article class="article-list-item">
-                        <div class="article-list-content">
-                            <div class="article-list-header">
-                                <div class="article-list-meta">
-                                    <time datetime="2024-01-15" class="article-date">2024年1月15日</time>
-                                    <span class="article-category">编内</span>
-                                    <span class="reading-time">8 分钟</span>
-                                </div>
-                                <h3 class="article-list-title">
-                                    <a href="articles/mitm.html?id=1">关于创造力的思考</a>
-                                </h3>
-                            </div>
-                            <p class="article-list-excerpt">
-                                创造力不是魔法，而是一种可以通过练习培养的能力。在这篇文章中，我想分享一些关于如何培养和维持创造力的想法...
-                            </p>
-                            <div class="article-list-tags">
-                                <a href="tag.html?tag=创造力" class="tag active">创造力</a>
-                                <a href="tag.html?tag=思考" class="tag">思考</a>
-                                <a href="tag.html?tag=学习方法" class="tag">学习方法</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 更多列表项... -->
+                <!-- 空状态 -->
+                <div class="empty-state" id="empty-state" style="display: none;">
+                    <div class="empty-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="empty-title">暂无相关文章</h3>
+                    <p class="empty-description">该标签下暂时没有文章，请尝试查看其他标签。</p>
+                    <a href="tags.html" class="cta-button">浏览所有标签</a>
                 </div>
-
-                <!-- 分页导航 -->
-                <nav class="pagination" role="navigation" aria-label="文章分页">
-                    <ul class="pagination-list">
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-link" aria-label="上一页">
-                                <span aria-hidden="true">←</span>
-                                上一页
-                            </a>
-                        </li>
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-link active" aria-label="第1页" aria-current="page">1</a>
-                        </li>
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-link" aria-label="第2页">2</a>
-                        </li>
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-link" aria-label="第3页">3</a>
-                        </li>
-                        <li class="pagination-item">
-                            <a href="#" class="pagination-link" aria-label="下一页">
-                                下一页
-                                <span aria-hidden="true">→</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-
-        <!-- 返回标签云 -->
-        <section class="back-to-tags">
-            <div class="container">
-                <a href="tags.html" class="back-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="19" y1="12" x2="5" y2="12"></line>
-                        <polyline points="12 19 5 12 12 5"></polyline>
-                    </svg>
-                    返回标签云
-                </a>
             </div>
         </section>
     </main>
@@ -374,6 +152,215 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // 阅读时间计算函数（基于400字/分钟的平均阅读速度）
+        function calculateReadingTime(chineseChars, englishWords) {
+            const totalWords = chineseChars + englishWords;
+            const readingSpeed = 400; // 中文平均阅读速度：400字/分钟
+            const minutes = Math.ceil(totalWords / readingSpeed);
+            return minutes;
+        }
+
+        // 文章数据（基于实际字数计算）
+        const articles = [
+            {
+                title: "ChatGPT作为方法",
+                url: "articles/chatgpt-as-method.html",
+                date: "2023年8月4日",
+                category: "编外",
+                tags: ["ChatGPT", "AI工具", "学习方法", "效率提升", "费曼学习法"],
+                excerpt: "自今年年初ChatGPT引爆社交网络以来，我们第一次体验到了科幻作品中那种无所不能的人工智能...",
+                chineseChars: 1972,
+                englishWords: 15,
+                readingTime: calculateReadingTime(1972, 15)
+            },
+            {
+                title: "御敌于外：配置HSTS防御中间人攻击",
+                url: "articles/mitm.html",
+                date: "2020年7月30日",
+                category: "编内",
+                tags: ["网络安全", "HTTPS", "中间人攻击", "HSTS", "Nginx"],
+                excerpt: "之前在自己的服务器上架设了博客并发布到了公网，考虑到安全性还特意加了HTTPS支持...",
+                chineseChars: 1626,
+                englishWords: 648,
+                readingTime: calculateReadingTime(1626, 648)
+            },
+            {
+                title: "重听罗振宇",
+                url: "articles/weekly-journal-vol44.html",
+                date: "2025年11月2日",
+                category: "周刊",
+                tags: ["播客", "罗振宇", "长期主义", "媒体观察", "AI就业"],
+                excerpt: "上周听了播客对话罗振宇，这是我第一次听罗振宇与他人对谈。在他的节目之外听他讲自己的方法和想法...",
+                chineseChars: 846,
+                englishWords: 1,
+                readingTime: calculateReadingTime(846, 1)
+            },
+            {
+                title: "博客系统新范式",
+                url: "articles/weekly-journal-vol45.html",
+                date: "2025年11月9日",
+                category: "周刊",
+                tags: ["AI写作", "Claude Code", "博客系统", "文明之旅", "生成式AI"],
+                excerpt: "这周，我在使用Claude Code写作时，突然意识到：博客系统的逻辑，正在被彻底改写...",
+                chineseChars: 1308,
+                englishWords: 22,
+                readingTime: calculateReadingTime(1308, 22)
+            }
+        ];
+
+        // 获取URL参数中的标签名
+        function getTagFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('tag');
+        }
+
+        // 解析URL编码的标签名
+        function decodeTagName(tag) {
+            return decodeURIComponent(tag || '');
+        }
+
+        // 根据标签筛选文章
+        function filterArticlesByTag(tag) {
+            if (!tag) return [];
+            return articles.filter(article =>
+                article.tags.some(articleTag =>
+                    articleTag.toLowerCase() === tag.toLowerCase()
+                )
+            );
+        }
+
+        // 获取相关标签（出现在同一文章中的其他标签）
+        function getRelatedTags(targetTag, filteredArticles) {
+            const relatedTags = new Set();
+
+            filteredArticles.forEach(article => {
+                article.tags.forEach(tag => {
+                    if (tag.toLowerCase() !== targetTag.toLowerCase()) {
+                        relatedTags.add(tag);
+                    }
+                });
+            });
+
+            return Array.from(relatedTags).slice(0, 8); // 最多显示8个相关标签
+        }
+
+        // 获取涉及到的栏目
+        function getCollections(filteredArticles) {
+            const collections = new Set();
+            filteredArticles.forEach(article => {
+                collections.add(article.category);
+            });
+            return Array.from(collections);
+        }
+
+        // 计算总阅读时间
+        function getTotalReadingTime(filteredArticles) {
+            return filteredArticles.reduce((total, article) => total + article.readingTime, 0);
+        }
+
+        // 格式化阅读时间
+        function formatReadingTime(minutes) {
+            if (minutes >= 60) {
+                return `${Math.floor(minutes / 60)}小时${minutes % 60}分钟`;
+            }
+            return `${minutes}分钟`;
+        }
+
+        // 生成文章卡片HTML
+        function generateArticleCard(article) {
+            const tagsHtml = article.tags.map(tag =>
+                `<span class="tag">${tag}</span>`
+            ).join('');
+
+            return `
+                <article class="post-card">
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <time datetime="${article.date}" class="post-date">${article.date}</time>
+                            <span class="post-category">${article.category}</span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="${article.url}">${article.title}</a>
+                        </h3>
+                        <p class="post-excerpt">${article.excerpt}</p>
+                        <div class="post-tags">
+                            ${tagsHtml}
+                        </div>
+                        <div class="post-author">
+                            <span class="author-name">作者</span>
+                            <span class="reading-time">阅读时间 ${article.readingTime} 分钟</span>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        // 更新页面内容
+        function updatePage() {
+            const tag = getTagFromUrl();
+            const decodedTag = decodeTagName(tag);
+
+            if (!tag) {
+                // 如果没有标签参数，显示标签页
+                document.getElementById('tag-name').textContent = '未指定标签';
+                document.getElementById('tag-title').textContent = '未指定标签';
+                document.getElementById('tag-description').textContent = '请从标签页面选择一个标签';
+                document.getElementById('empty-state').style.display = 'block';
+                document.getElementById('articles-grid').style.display = 'none';
+                document.getElementById('related-tags-section').style.display = 'none';
+                document.querySelector('.tag-stats').style.display = 'none';
+                return;
+            }
+
+            const filteredArticles = filterArticlesByTag(tag);
+            const collections = getCollections(filteredArticles);
+            const totalTime = getTotalReadingTime(filteredArticles);
+            const relatedTags = getRelatedTags(tag, filteredArticles);
+
+            // 更新标签信息
+            document.getElementById('tag-name').textContent = decodedTag;
+            document.getElementById('tag-title').textContent = decodedTag;
+            document.getElementById('tag-count').textContent = `${filteredArticles.length} 篇文章`;
+
+            // 更新描述
+            if (filteredArticles.length > 0) {
+                document.getElementById('tag-description').textContent = `关于"${decodedTag}"标签的${filteredArticles.length}篇文章`;
+                const latestDate = filteredArticles[filteredArticles.length - 1].date;
+                document.getElementById('tag-updated').textContent = latestDate;
+            } else {
+                document.getElementById('tag-description').textContent = `暂无关于"${decodedTag}"标签的文章`;
+            }
+
+            // 更新统计信息
+            document.getElementById('article-count').textContent = filteredArticles.length;
+            document.getElementById('collection-count').textContent = collections.length;
+            document.getElementById('total-time').textContent = formatReadingTime(totalTime);
+
+            // 生成相关标签
+            if (relatedTags.length > 0) {
+                const relatedTagsHtml = relatedTags.map(relatedTag =>
+                    `<a href="tag.html?tag=${encodeURIComponent(relatedTag)}" class="tag related-tag">${relatedTag}</a>`
+                ).join('');
+                document.getElementById('related-tags').innerHTML = relatedTagsHtml;
+            } else {
+                document.getElementById('related-tags-section').style.display = 'none';
+            }
+
+            // 生成文章列表
+            if (filteredArticles.length > 0) {
+                const articlesHtml = filteredArticles.map(article => generateArticleCard(article)).join('');
+                document.getElementById('articles-grid').innerHTML = articlesHtml;
+                document.getElementById('articles-grid').style.display = 'grid';
+                document.getElementById('empty-state').style.display = 'none';
+            } else {
+                document.getElementById('articles-grid').style.display = 'none';
+                document.getElementById('empty-state').style.display = 'block';
+            }
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', updatePage);
+    </script>
 </body>
 </html>
