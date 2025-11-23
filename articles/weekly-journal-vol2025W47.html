@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weekly Journal Vol.2025W47 | 从生成惊艳到微调折磨 - 周刊文章">
+    <meta name="author" content="Blog Author">
+    <title>Weekly Journal Vol.2025W47 | 从生成惊艳到微调折磨 - 编外</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="../index.html" class="brand-link">编外</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">首页</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">栏目 <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../collection/inside.html" class="dropdown-link">编内</a></li>
+                            <li><a href="../collection/outside.html" class="dropdown-link">编外</a></li>
+                            <li><a href="../collection/weekly.html" class="dropdown-link active">周刊</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../collection/inside.html" class="nav-link">全部文章</a></li>
+                    <li><a href="../tags.html" class="nav-link">标签</a></li>
+                    <li><a href="../about.html" class="nav-link">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <!-- 面包屑导航 -->
+        <div class="container">
+            <nav class="breadcrumb" role="navigation" aria-label="面包屑导航">
+                <div class="breadcrumb-item">
+                    <a href="../index.html" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <a href="../collection/weekly.html" class="breadcrumb-link">周刊</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">Weekly Journal Vol.2025W47</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 文章内容 -->
+        <article class="article-content">
+            <div class="container">
+                <header class="article-header">
+                    <div class="weekly-badge">
+                        <span class="weekly-volume">Vol.2025W47</span>
+                        <span class="weekly-date">2025年11月23日</span>
+                    </div>
+                    <h1 class="article-title">从生成惊艳到微调折磨</h1>
+                    <div class="article-meta">
+                        <span class="reading-time">阅读时间 8 分钟</span>
+                        <span class="article-category">周刊</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">Weekly Journal</span>
+                        <span class="tag">AI微调</span>
+                        <span class="tag">生成式AI</span>
+                        <span class="tag">Claude Skill</span>
+                        <span class="tag">产品思考</span>
+                    </div>
+                </header>
+
+                <div class="article-body">
+                    <h2 id="本周主题--从生成惊艳到微调折磨">🧠 本周主题 | 从"生成惊艳"到"微调折磨"</h2>
+
+                    <p>过去两周，我连续被生成式 AI 的能力震撼——让模型从零构建一个前端工程，或生成一套完整的交互原型，都令人产生一种"未来已来"的错觉。AI 以近乎魔术的方式，在极短时间内拼接出一个可运行的项目，而它的风格、视觉、结构都能做到"似模似样"。</p>
+
+                    <p>但本周我才真正感受到：<strong>生成不是终点，微调才是门槛。</strong></p>
+
+                    <p>当我开始对这些自动生成的工程做细节调整时，问题接踵而来：</p>
+
+                    <ul>
+                    <li>对代码理解不深，几乎无法判断问题在哪一层出现</li>
+                    <li>描述需求的不精确，会造成模型反复"修复—跑偏—再修复"的循环</li>
+                    <li>生成的项目越完整，越像一个黑箱，让人难以下手</li>
+                    <li>模型对微调的理解逻辑与人类开发者不同，很容易造成累积误差</li>
+                    </ul>
+
+                    <p>生成阶段带来的兴奋会掩盖一个事实：<br>
+<strong>AI 不是帮你省略理解复杂系统，而是把理解的难度推迟到生成之后。</strong></p>
+
+                    <p>生成降低了门槛，微调重新抬高了门槛。<br>
+真正的挑战在于：你能否驾驭 AI 为你生成的复杂度，并让它持续朝你的目标收敛。</p>
+
+                    <p><strong>思想句柄：AI 的门槛不在"生成"，而在"理解并控制生成后的复杂度"。</strong></p>
+
+                    <hr>
+
+                    <h2 id="本周阅读--claude-skill工具思维的回归">📚 本周阅读 | Claude Skill：工具思维的回归</h2>
+
+                    <p>本周阅读了 Claude Skill 的设计文档。与其他厂商高举 "no code" 心智不同，Claude 选择了另一条路径：<strong>让模型擅长它擅长的，把执行交给成熟工具。</strong></p>
+
+                    <p>文档中反复强调一个理念：</p>
+
+                    <blockquote><p>大模型不必什么都自己做，尤其不该重复已有生态已经做得非常好的事情。</p></blockquote>
+
+                    <p>例如：</p>
+
+                    <ul>
+                    <li>信息抽象、总结、推理 —— 模型更擅长</li>
+                    <li>读取 PDF、解析表格、执行命令 —— 交给代码库更稳健</li>
+                    </ul>
+
+                    <p>这种设计背后是一种非常工程化的判断：<br>
+与其让模型努力覆盖所有能力，不如让它成为"能力的调度者"。<br>
+它不追求"模型吞噬世界"，而是把自己放在生态系统的关键节点。</p>
+
+                    <p>从行业视角看，这也是路线分化的一部分：<br>
+有人把 AI 打造成一个"万能入口"，有人把 AI 当成"更强的 glue layer"。</p>
+
+                    <hr>
+
+                    <h2 id="本周听--抖音尚未吞噬世界时">🎧 本周听 | 抖音尚未吞噬世界时</h2>
+
+                    <p>这一期播客让我从"短视频吞噬世界"的当下退开一步，重新回到抖音尚未统治市场的时代。我们习惯认为抖音发明了短视频，但事实上：</p>
+
+                    <p><strong>短视频方向当时已是行业共识，抖音做对的是执行路径。</strong></p>
+
+                    <p>节目强调了这些常被忽略的关键点：</p>
+
+                    <ul>
+                    <li>如何设计最初的产品形态</li>
+                    <li>如何冷启动，让内容和用户相互滚动</li>
+                    <li>如何吸引创作者入驻，建立持续供给</li>
+                    <li>如何让分发机制跑起来</li>
+                    </ul>
+
+                    <p>这些看似"没有技术含量"的细节，却往往决定成败。</p>
+
+                    <p>它让我意识到，技术本身并非最关键的护城河，<br>
+真正区隔产品命运的是速度、执行与生态构建。</p>
+
+                    <p><strong>洞察句：方向决定不了胜负，执行方式才是产品真正的命运分岔。</strong></p>
+
+                    <hr>
+
+                    <h2 id="本周在想">💭 本周在想</h2>
+
+                    <h3 id="1工程视角下的-ai全能不是未来适配才是">1️⃣ 工程视角下的 AI：全能不是未来，适配才是</h3>
+
+                    <p>Claude Skill 的实现方式让我重新思考 AI 的未来结构。<br>
+大模型并不需要"一肩挑"，也不能替代成熟工具链。<br>
+相比"模型能干所有事"，一种更可持续的路径可能是：</p>
+
+                    <ul>
+                    <li>模型负责理解、生成、推理</li>
+                    <li>工具负责解析、执行、读写、转换</li>
+                    </ul>
+
+                    <p>这是一种工程师式的务实：<br>
+用模型解决复杂度，用工具解决确定性。</p>
+
+                    <h3 id="2预付费模式的风险体育场馆为何不断换皮">2️⃣ 预付费模式的风险：体育场馆为何不断"换皮"</h3>
+
+                    <p>这周发现游泳馆运营方又换人，公开栏里写明"旧运营方拖欠水电并提前大量售卡"。<br>
+这让我想起疫情后在龙湖天街遇到的类似经历：价格便宜、场馆求生、最终倒闭。</p>
+
+                    <p>预付费模式本质上是把未来收入提前兑现。一旦资金链紧绷，用户就会承受风险。大林浩湾因为有政府背景，虽然换运营方，但至少主体仍在，不至于彻底跑路。</p>
+
+                    <p>这些反复出现的经历让我逐渐形成一种判断：<br>
+在本质结构不变的行业里，跑路不是意外，而是周期。</p>
+                </div>
+
+                <footer class="article-footer">
+                    <div class="container">
+                        <div class="footer-navigation">
+                            <div class="nav-prev">
+                                <a href="../articles/weekly-journal-vol2025W46.html" class="nav-link">
+                                    <span class="nav-label">← 上一期</span>
+                                    <span class="nav-title">AI 原型设计新范式</span>
+                                </a>
+                            </div>
+                            <div class="nav-next">
+                                <span class="nav-link disabled">下一期 →</span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 编外. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
