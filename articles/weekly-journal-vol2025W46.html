@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weekly Journal Vol.2025W46 | AI 原型设计新范式 - 周刊文章">
+    <meta name="author" content="Blog Author">
+    <title>Weekly Journal Vol.2025W46 | AI 原型设计新范式 - 编外</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="main-nav" role="navigation" aria-label="主导航">
+                <div class="nav-brand">
+                    <a href="../index.html" class="brand-link">编外</a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">首页</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">栏目 <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../collection/inside.html" class="dropdown-link">编内</a></li>
+                            <li><a href="../collection/outside.html" class="dropdown-link">编外</a></li>
+                            <li><a href="../collection/weekly.html" class="dropdown-link active">周刊</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../collection/inside.html" class="nav-link">全部文章</a></li>
+                    <li><a href="../tags.html" class="nav-link">标签</a></li>
+                    <li><a href="../about.html" class="nav-link">关于</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content" role="main">
+        <!-- 面包屑导航 -->
+        <div class="container">
+            <nav class="breadcrumb" role="navigation" aria-label="面包屑导航">
+                <div class="breadcrumb-item">
+                    <a href="../index.html" class="breadcrumb-link">首页</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <a href="../collection/weekly.html" class="breadcrumb-link">周刊</a>
+                    <span class="breadcrumb-separator">/</span>
+                </div>
+                <div class="breadcrumb-item">
+                    <span class="breadcrumb-current">Weekly Journal Vol.2025W46</span>
+                </div>
+            </nav>
+        </div>
+
+        <!-- 文章内容 -->
+        <article class="article-content">
+            <div class="container">
+                <header class="article-header">
+                    <div class="weekly-badge">
+                        <span class="weekly-volume">Vol.2025W46</span>
+                        <span class="weekly-date">2025年11月14日</span>
+                    </div>
+                    <h1 class="article-title">AI 原型设计新范式</h1>
+                    <div class="article-meta">
+                        <span class="reading-time">阅读时间 7 分钟</span>
+                        <span class="article-category">周刊</span>
+                    </div>
+                    <div class="article-tags">
+                        <span class="tag">AI原型设计</span>
+                        <span class="tag">Claude Code</span>
+                        <span class="tag">多模型协作</span>
+                        <span class="tag">财新周刊</span>
+                        <span class="tag">文明之旅</span>
+                    </div>
+                </header>
+
+                <div class="article-body">
+                    <h2 id="本周主题--ai-原型设计的新范式">🧠 本周主题 | AI 原型设计的新范式</h2>
+
+                    <p>这一周与 AI 打交道的密度远超以往，最直观的感受是：<strong>AI 已从"辅助工具"转向"直接生产者"。</strong></p>
+
+                    <p>在 Cloud Code 中，我尝试让 AI 帮我构思一个网页原型。本以为只是讨论结构和布局，没想到随着对话推进，整个页面的布局、交互和基本可点的界面都自动生成了。原型不再是讨论后的产物，而是讨论中的产物。我甚至顺势续费了智谱年费，因为它切实改变了我工作的节奏。</p>
+
+                    <p>这种体验不仅发生在原型上，也发生在架构设计上。过去需要画流程、写说明、做交互图；现在用简单的 HTML + JS，就可以让 AI 生成一个可交互的演示界面，逻辑清晰、结构分明。甚至用 DALL·E 做连环画，也能得到令人惊讶的结果。</p>
+
+                    <p>我尝试用多模型协作：</p>
+
+                    <ul>
+                    <li>ChatGPT 负责定义需求</li>
+                    <li>Claude Code 制定开发计划</li>
+                    <li>Cursor 进行代码落地</li>
+                    </ul>
+
+                    <p>第一轮通常顺利，但一旦进入持续迭代，问题随之而来：<strong>模型无法共享上下文</strong>。新项目不需要上下文，而真实项目离不开上下文。要让 AI 参与完整的开发周期，就必须解决跨阶段的"记忆"问题。</p>
+
+                    <p>我开始意识到：<br>
+真正的范式跃迁，不仅来自生成能力的跃升，而来自 AI 能否理解"前因后果"。</p>
+
+                    <p><strong>一句话收束：AI 让产物随着思考实时生成，而未来的关键，是让 AI 理解整个项目的连续性。</strong></p>
+
+                    <hr>
+
+                    <h2 id="本周阅读--多线程的结构观察">📚 本周阅读 | 多线程的结构观察</h2>
+
+                    <h3 id="1警惕ai带来就业哑铃效应财新">1）《警惕AI带来就业"哑铃效应"》｜财新</h3>
+
+                    <p>北大的研究显示，大模型正在加速就业结构的两极化：高技能与低技能岗位扩张，中等技能岗位持续萎缩。哑铃的两端并不对称，高技能端人数少但回报高，中间地带正在快速塌陷。</p>
+
+                    <p>这篇文章让我意识到：技术不仅重塑任务，还在重塑"谁能获得体面的工作"。</p>
+
+                    <p><strong>一句话总结：AI 的红利并不平均，它正在重新定义阶层结构。</strong></p>
+
+                    <h3 id="2高息个人贷款踩刹车财新">2）《高息个人贷款踩刹车》｜财新</h3>
+
+                    <p>监管要求消费贷综合融资成本降至 20% 以下，单笔不得超过 24%。政策一出，消金行业立即裁员。我对此有双重感受：</p>
+
+                    <p>作为消费者，我支持利率下降；<br>
+作为乙方，我能预见客户削减预算，项目投入随之下降。</p>
+
+                    <p>文章拆解了"高利率"的逻辑：<br>
+银行利息 + 助贷平台担保费 + 风控与数据成本 + 坏账率（16%–20%）。叠加后，36% 的年化并非暴利，而是结构的结果。政策压降后，部分客群业务模式将直接失效，甚至可能回流民间借贷。</p>
+
+                    <p><strong>一句话总结：监管保护消费者，也重塑行业的生死线。</strong></p>
+
+                    <h3 id="3短剧狂奔财新">3）《短剧狂奔》｜财新</h3>
+
+                    <p>微短剧在两年间爆发式增长，其背后一条清晰脉络是：<strong>注意力结构决定内容形态</strong>。<br>
+10 分钟以内的快节奏叙事、爽点密集反转，符合今天的注意力模式。</p>
+
+                    <p>我注意到两个趋势：</p>
+
+                    <ul>
+                    <li>西安、郑州等传统制造业城市反而成为短剧中心，说明新内容业态会为落后城市提供跃迁机会。</li>
+                    <li>数据链路透明化让资本愿意进入，但制作利润仍然薄弱。平台补贴终将退出，行业又要经历新一轮重构。</li>
+                    </ul>
+
+                    <p>合规化也在加速。灵活用工收紧、演员税务整改，说明内容行业的野蛮生长时代正在结束。</p>
+
+                    <p><strong>一句话总结：短剧行业跑得快，但靠近真实利润时仍然步步惊心。</strong></p>
+
+                    <hr>
+
+                    <h2 id="本周听--文明之旅制度为何在特定时空诞生">🎧 本周听 | 《文明之旅》：制度为何在特定时空诞生？</h2>
+
+                    <h3 id="1科举制度一场早期的游戏化激励系统">1）科举制度：一场早期的"游戏化激励系统"</h3>
+
+                    <p>《文明之旅》讲《劝学吟》的一期，从游戏设计角度分析科举制度，令人耳目一新：</p>
+
+                    <ul>
+                    <li>规则统一，所有人用同样教材</li>
+                    <li>成本相对低，穷人也能读</li>
+                    <li>长期激励有效，七八十岁仍可能中进士</li>
+                    <li>每个阶段都有现实奖励，如"秀才"带来的身份认同</li>
+                    </ul>
+
+                    <p>这种设计让科举制度得以延续千年。</p>
+
+                    <p>我开始思考：游戏机制在现实中无处不在。外卖平台的骑手激励、乌克兰军队的"战果换装备"，都把游戏设计嵌入现实。</p>
+
+                    <p><strong>一句话收束：理解激励机制，就是理解现代社会的行为逻辑。</strong></p>
+
+                    <h3 id="2交子为何诞生在北宋四川">2）交子为何诞生在北宋四川？</h3>
+
+                    <p>同系列另一期节目讨论交子的起源，与我读过的《中央帝国的财政密码》《如临大敌》形成互文。</p>
+
+                    <p>交子之所以在四川出现，是三重因素共同推动：</p>
+
+                    <ul>
+                    <li><strong>资源约束</strong>：铁钱沉重、运输困难，必须寻找替代方案</li>
+                    <li><strong>地理约束</strong>：四川是"经济孤岛"，信用体系更易在区域内自洽</li>
+                    <li><strong>商业需求</strong>：盐业、茶马贸易繁荣，需要更高效的结算方式</li>
+                    </ul>
+
+                    <p>制度从来不是凭空出现，而是结构压力推动的结果。</p>
+
+                    <p><strong>一句话收束：制度只会在"必须出现的地方"诞生。</strong></p>
+
+                    <hr>
+
+                    <p>这就是本周的分享，希望对你有所启发。如果你有任何想法或建议，欢迎与我交流。</p>
+                </div>
+
+                <footer class="article-footer">
+                    <div class="container">
+                        <div class="footer-navigation">
+                            <div class="nav-prev">
+                                <a href="../articles/weekly-journal-vol45.html" class="nav-link">
+                                    <span class="nav-label">← 上一期</span>
+                                    <span class="nav-title">博客系统新范式</span>
+                                </a>
+                            </div>
+                            <div class="nav-next">
+                                <span class="nav-link disabled">下一期 →</span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2024 编外. 保留所有权利。</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link" aria-label="RSS订阅">RSS</a>
+                    <a href="#" class="footer-link" aria-label="GitHub">GitHub</a>
+                    <a href="#" class="footer-link" aria-label="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
